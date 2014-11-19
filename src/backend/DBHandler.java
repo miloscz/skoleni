@@ -20,7 +20,7 @@ import com.mongodb.util.JSON;
 import interfaces.IDBHandler;
 
 public class DBHandler implements IDBHandler {
-	private DBHandler instance;
+	private static DBHandler instance;
 	private DB db;
 
 	@Override
@@ -78,12 +78,12 @@ public class DBHandler implements IDBHandler {
 		return CandidateFactory.createCandidate(obj);
 	}
 
-	public DBHandler getInstance() {
+	public static DBHandler getInstance() {
 		if (instance == null) {
 			instance = new DBHandler();
 			return instance;
 		} else {
-			return this.instance;
+			return instance;
 		}
 	}
 
