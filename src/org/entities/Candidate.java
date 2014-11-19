@@ -5,9 +5,16 @@ public class Candidate {
 	private int age;
 	private double chest, waist, hips;
 	
-	Candidate(String firstName, String surname) {
+	
+
+	 Candidate(String firstName, String surname, int age, double chest,
+			double waist, double hips) {
 		this.firstName = firstName;
 		this.surname = surname;
+		this.age = age;
+		this.chest = chest;
+		this.waist = waist;
+		this.hips = hips;
 	}
 
 	/**
@@ -65,6 +72,42 @@ public class Candidate {
 	public void setHips(double hips) {
 		this.hips = hips;
 	}
+
+	/**
+	 * @return the firstName
+	 */
+	public synchronized String getFirstName() {
+		return firstName;
+	}
+
+	/**
+	 * @param firstName the firstName to set
+	 */
+	public synchronized void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	/**
+	 * @return the surname
+	 */
+	public synchronized String getSurname() {
+		return surname;
+	}
+
+	/**
+	 * @param surname the surname to set
+	 */
+	public synchronized void setSurname(String surname) {
+		this.surname = surname;
+	}
+	
+	
+
+	
+	
+	
+	
+	
 	
 	
 	
