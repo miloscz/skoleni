@@ -8,7 +8,6 @@ public class Candidate {
 	private String name;
 	private String surname;
 	private Integer age;
-	private Integer[] measures;
 	private Double height;
 	private Double weight;
 
@@ -18,7 +17,6 @@ public class Candidate {
 	public Candidate(String id, String aName,
 			String aSurname,
 			String aAge,
-			String[] aMeasures,
 			String aHeight,
 			String aWeight,
 			String aRating) throws Exception {
@@ -34,13 +32,7 @@ public class Candidate {
 			this.weight = Double.parseDouble(aWeight);
 			this.rating = Integer.parseInt(aRating);
 
-			int measuresCount = aMeasures.length;
-			this.measures = new Integer[measuresCount];
-			if (measuresCount > 0) {				
-				for (int i = 0; i < measuresCount; i++) {
-						this.measures[i] = Integer.parseInt(aMeasures[i]);
-				}
-			}
+			
 
 		} catch (NumberFormatException e) {			
 			throw new Exception(e.getMessage());
@@ -98,13 +90,7 @@ public class Candidate {
 		this.age = age;
 	}
 
-	public Integer[] getMeasures() {
-		return measures;
-	}
-
-	public void setMeasures(Integer[] measures) {
-		this.measures = measures;
-	}
+	
 
 	public Double getHeight() {
 		return height;

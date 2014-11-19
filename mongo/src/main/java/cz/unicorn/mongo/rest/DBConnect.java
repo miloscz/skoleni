@@ -28,7 +28,7 @@ public class DBConnect implements DbUtil {
 				candidates.add(cur);
 			}
 		} catch (Exception e) {
-			throw e;
+			throw new DBException("Err connecting DB.");
 		} finally {
 			cursor.close();
 		}
@@ -38,6 +38,7 @@ public class DBConnect implements DbUtil {
 
 	public void addCandidate(String data) throws Exception {
 		DBObject can = getDBO(data);
+		
 		getCol().insert(can);
 		
 	}
@@ -78,7 +79,7 @@ public class DBConnect implements DbUtil {
 		try {
 			client = new MongoClient();
 		} catch (UnknownHostException e) {
-			e.printStackTrace();
+			throw new DBException("Err connecting DB.");
 		}
 	    return client.getDB("kand");
 	}
@@ -97,16 +98,16 @@ public class DBConnect implements DbUtil {
 		if (o instanceof DBObject) {
 			db = (DBObject) o;
 		} else {
-			throw new Exception("Chyba");
+			throw new DBException("JSON err");
 		}
 		if (!checkCand(db)) {
-			throw new Exception("Chyba");
+			throw new DBException("JSON err");
 		}
 		return db;
 	}
 	
 	private Candidate getCanFromDBO(DBObject db) throws Exception {
-		return new Candidate((String) db.get("_id"), (String) db.get("name"),(String) db.get("surname"),(String) db.get("age"), null,(String) db.get("height"),(String) db.get("weight"),(String) db.get("rating"));
+		return new Candidate(((DBObject) db.get("_id")).toString(), (String) db.get("name"),(String) db.get("surname"),(String) db.get("age"),(String) db.get("height"),(String) db.get("weight"),(String) db.get("rating"));
 	}
 	
 	private DBObject getDBOID(String id) {
@@ -115,7 +116,22 @@ public class DBConnect implements DbUtil {
 	}
 	
 	private boolean checkCand(DBObject db) {
-		// TODO Auto-generated method stub
+		if(db.get("name")==null) {
+			return false;
+		}
+		if(db.get("surname")==null) {
+			return false;
+		}
+		if(db.get("age")==null) {
+			return false;
+		}
+		if(db.get("height")==null) {
+			return false;
+		}
+		if(db.get("weight")==null) {
+			return false;
+		}
+		
 		return true;
 	}
 
