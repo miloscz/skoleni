@@ -1,14 +1,15 @@
 package interfaces;
 
+import java.net.UnknownHostException;
 import java.util.List;
 
 import org.entities.Candidate;
 
-public interface IDBHandler {
-	public List<Candidate> getCandidates();
-public void vote(String id);
-public String getCandidate(String id);
-public String createCandidate(String body);
-public boolean removeCandidate(String id);
-public String updateCandidate(String id, String body);
+public interface IDBHandler  {
+public List<Candidate> getCandidates() throws Exception;
+public void vote(String id) throws Exception;
+public String getCandidate(String id) throws Exception;
+public String createCandidate(String body) throws Exception;
+public boolean removeCandidate(String id) throws Exception;
+public String updateCandidate(String id, String body) throws Exception;
 }
