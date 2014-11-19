@@ -27,7 +27,7 @@ public class DBHandler implements IDBHandler {
 	public List<Candidate> getCandidates() {
 		DBCollection candidateCol;
 		DBCursor obj = null;
-		candidateCol = db.getCollection("candidate");
+		candidateCol = getDatabase().getCollection("candidate");
 		obj = candidateCol.find();
 		String result = obj.toString();
 		obj.close();
@@ -35,9 +35,9 @@ public class DBHandler implements IDBHandler {
 	}
 
 	@Override
-	public void vote(String id) {
+	public void vote(String id) throws Exception {
 		//TODO:
-		DBCollection candidateCol = db.getCollection("candidate");
+		DBCollection candidateCol = getDatabase().getCollection("candidate");
 		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
 		candidateCol.update(obj,  new BasicDBObject("$inc", "1"));
 	}
@@ -45,15 +45,15 @@ public class DBHandler implements IDBHandler {
 	@Override
 	public String getCandidate(String id) {
 		DBCollection candidateCol;
-		candidateCol = db.getCollection("candidate");
+		candidateCol = getDatabase().getCollection("candidate");
 		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
 		String result = obj.toString();
 		return result;
 	}
 
 	@Override
-	public String createCandidate(String body) {
-		DBCollection candidateCol = db.getCollection("candidate");
+	public String createCandidate(String body) throws Exception {
+		DBCollection candidateCol = getDatabase().getCollection("candidate");
 		BasicDBObject obj = (BasicDBObject)JSON.parse(body);
 		candidateCol.insert(obj);
 		candidateCol.ensureIndex(new BasicDBObject("name","1"));
@@ -62,17 +62,17 @@ public class DBHandler implements IDBHandler {
 	}
 
 	@Override
-	public boolean removeCandidate(String id) {
-		DBCollection candidateCol = db.getCollection("candidate");
+	public boolean removeCandidate(String id) throws Exception {
+		DBCollection candidateCol = getDatabase().getCollection("candidate");
 		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
 		candidateCol.remove(obj);
 		return true;
 	}
 
 	@Override
-	public String updateCandidate(String id, String body) {
+	public String updateCandidate(String id, String body) throws Exception {
 		//TODO:
-		DBCollection candidateCol = db.getCollection("candidate");
+		DBCollection candidateCol = getDatabase().getCollection("candidate");
 		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
 		candidateCol.update(obj,  new BasicDBObject("$set", body));
 		obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
