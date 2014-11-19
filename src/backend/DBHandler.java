@@ -43,12 +43,12 @@ public class DBHandler implements IDBHandler {
 	}
 
 	@Override
-	public Candidate getCandidate(String id) {
+	public String getCandidate(String id) {
 		DBCollection candidateCol;
 		candidateCol = db.getCollection("candidate");
 		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
 		String result = obj.toString();
-		return CandidateFactory.createCandidate(obj);
+		return result;
 	}
 
 	@Override
@@ -70,12 +70,13 @@ public class DBHandler implements IDBHandler {
 	}
 
 	@Override
-	public Candidate updateCandidate(String id, String body) {
+	public String updateCandidate(String id, String body) {
 		//TODO:
 		DBCollection candidateCol = db.getCollection("candidate");
 		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
 		candidateCol.update(obj,  new BasicDBObject("$set", body));
-		return CandidateFactory.createCandidate(obj);
+		obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
+		return obj.toString();
 	}
 
 	public static DBHandler getInstance() {
