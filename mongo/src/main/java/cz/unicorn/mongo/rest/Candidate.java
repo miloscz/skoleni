@@ -1,4 +1,4 @@
-package cz.unicorn.mongo.rest;
+package Kand.Kand.db;
 
 
 
@@ -7,18 +7,18 @@ public class Candidate {
 	private String id;
 	private String name;
 	private String surname;
-	private Integer age;
-	private Integer[] measures;
+	private Integer age;	
 	private Double height;
 	private Double weight;
 
 	private Integer rating;		
 	
 	
-	public Candidate(String id, String aName,
+	public Candidate(
+			String id, 
+			String aName,
 			String aSurname,
-			String aAge,
-			String[] aMeasures,
+			String aAge,			
 			String aHeight,
 			String aWeight,
 			String aRating) throws Exception {
@@ -32,15 +32,8 @@ public class Candidate {
 			this.age = Integer.parseInt(aAge);
 			this.height = Double.parseDouble(aHeight);
 			this.weight = Double.parseDouble(aWeight);
-			this.rating = Integer.parseInt(aRating);
-
-			int measuresCount = aMeasures.length;
-			this.measures = new Integer[measuresCount];
-			if (measuresCount > 0) {				
-				for (int i = 0; i < measuresCount; i++) {
-						this.measures[i] = Integer.parseInt(aMeasures[i]);
-				}
-			}
+			this.rating = Integer.parseInt(aRating);		
+			
 
 		} catch (NumberFormatException e) {			
 			throw new Exception(e.getMessage());
@@ -98,13 +91,7 @@ public class Candidate {
 		this.age = age;
 	}
 
-	public Integer[] getMeasures() {
-		return measures;
-	}
 
-	public void setMeasures(Integer[] measures) {
-		this.measures = measures;
-	}
 
 	public Double getHeight() {
 		return height;
