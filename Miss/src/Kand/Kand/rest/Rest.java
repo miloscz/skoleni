@@ -1,52 +1,58 @@
 package Kand.Kand.rest;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+@Path("/")
 public class Rest {
 
-	public Rest(){
-		
-	}
+	TestRest rest = new TestRest();
 	
 	@GET
 	@Path("/api/candidates")
-	public Response getCandidates()
-	{
+	@Consumes("application/json")
+	@Produces("application/json")
+	public Response getCandidates(){
+		
+		String candidates;
 		try{
-		// /String candidates = XXX.getCandidates();
+		candidates = rest.getCandidates();
 			
 		}
 		catch(Exception e){
 			return Response.status(400).build();
 		}
 		
-		return Response.status(200).entity(candidates).build;
+		return Response.status(200).entity(candidates).build();
 	}
 	
 	@POST
 	@Path("/api/candidate/{CANTIDATE_ID}")
+	@Produces("application/json")
 	public Response getCandidate(@PathParam("CANDIDATE_ID") String id)
-	{
+	{String candidate;
 		try{
 		
-		//String candidate = XXX.getCandidate(id);
+		 candidate = rest.getCandidate(id);
 		}
 		catch(Exception e){
 			return Response.status(400).build();
 		}
-		return Response.status(200).entity(json).build;
+		return Response.status(200).entity(candidate).build();
 	}
 	
 	@POST
+	@Consumes("application/json")
 	@Path("/api/candidate/create")
 	public Response addCandidate(String data){
 		
 		try{
-			xxx.addCandidate(data);
+			rest.addCandidate(data);
 		}catch(Exception e){
 			return Response.status(400).build();
 		}
@@ -58,10 +64,11 @@ public class Rest {
 	
 	@POST
 	@Path("/api/candidate/{CANDIDATE_ID}/edit")
+	@Consumes("application/json")
 	public Response editCandidate(@PathParam("CANDIDATE_ID") String idCandidate , String data){
 		
 		try{
-			xxx.editCandidate(idCandidate ,data);
+			rest.editCandidate(idCandidate ,data);
 		}catch(Exception e){
 			return Response.status(400).build();
 		}
@@ -72,10 +79,11 @@ public class Rest {
 	
 	@POST
 	@Path("/api/candidate/{CANDIDATE_ID}/remove")
+	@Consumes("application/json")
 	public Response removeCandidate(@PathParam("CANDIDATE_ID") String idCandidate){
 		
 		try{
-			xxx.removeCandidate(idCandidate);
+			rest.removeCandidate(idCandidate);
 		}catch(Exception e){
 			return Response.status(400).build();
 		}
@@ -87,10 +95,11 @@ public class Rest {
 	
 	@POST
 	@Path("/api/candidate/{CANDIDATE_ID}/evaluation/add")
-	public Response removeCandidate(@PathParam("CANDIDATE_ID") String idCandidate){
+	@Consumes("application/json")
+	public Response addEvaluation(@PathParam("CANDIDATE_ID") String idCandidate, String data){
 		
 		try{
-			xxx.removeCandidate(idCandidate);
+			rest.addEvaluation(idCandidate, data);
 		}catch(Exception e){
 			return Response.status(400).build();
 		}
