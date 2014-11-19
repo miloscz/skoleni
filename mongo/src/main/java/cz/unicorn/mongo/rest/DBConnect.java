@@ -28,7 +28,7 @@ public class DBConnect implements DbUtil {
 				candidates.add(cur);
 			}
 		} catch (Exception e) {
-			throw e;
+			throw new DBException("Err connecting DB.");
 		} finally {
 			cursor.close();
 		}
@@ -78,7 +78,7 @@ public class DBConnect implements DbUtil {
 		try {
 			client = new MongoClient();
 		} catch (UnknownHostException e) {
-			e.printStackTrace();
+			throw new DBException("Err connecting DB.");
 		}
 	    return client.getDB("kand");
 	}
@@ -97,10 +97,10 @@ public class DBConnect implements DbUtil {
 		if (o instanceof DBObject) {
 			db = (DBObject) o;
 		} else {
-			throw new Exception("Chyba");
+			throw new DBException("JSON err");
 		}
 		if (!checkCand(db)) {
-			throw new Exception("Chyba");
+			throw new DBException("JSON err");
 		}
 		return db;
 	}
