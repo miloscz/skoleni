@@ -2,19 +2,26 @@ package org.entities;
 
 public class Candidate {
 	private String firstName, surname;
-	private int age;
+	private int age, votes;
 	private double chest, waist, hips;
+	private double heigth, weight;
 	
 	
 
-	 Candidate(String firstName, String surname, int age, double chest,
-			double waist, double hips) {
+	 
+
+	public Candidate(String firstName, String surname, int age, double chest,
+			double waist, double hips, double heigth, double weight,
+			int votes) {
 		this.firstName = firstName;
 		this.surname = surname;
 		this.age = age;
 		this.chest = chest;
 		this.waist = waist;
 		this.hips = hips;
+		this.heigth = heigth;
+		this.weight = weight;
+		this.votes = votes;
 	}
 
 	/**
@@ -100,6 +107,49 @@ public class Candidate {
 	public synchronized void setSurname(String surname) {
 		this.surname = surname;
 	}
+
+	/**
+	 * @return the heigth
+	 */
+	public synchronized double getHeigth() {
+		return heigth;
+	}
+
+	/**
+	 * @param heigth the heigth to set
+	 */
+	public synchronized void setHeigth(double heigth) {
+		this.heigth = heigth;
+	}
+
+	/**
+	 * @return the weight
+	 */
+	public synchronized double getWeight() {
+		return weight;
+	}
+
+	/**
+	 * @param weight the weight to set
+	 */
+	public synchronized void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	/**
+	 * @return the votes
+	 */
+	public synchronized double getVotes() {
+		return votes;
+	}
+
+	/**
+	 * @param votes the votes to set
+	 */
+	public synchronized void setVotes(int votes) {
+		this.votes = votes;
+	}
+	
 	
 	
 
