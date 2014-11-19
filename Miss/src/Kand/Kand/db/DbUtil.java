@@ -1,5 +1,7 @@
 package Kand.Kand.db;
 
+import java.util.List;
+
 public interface DbUtil {
 	
 	public DbUtil getInstance();
@@ -10,7 +12,7 @@ public interface DbUtil {
 	
 	public Candidate getCandidatesObj() throws Exception;
 	
-	public <List>Candidate getCandidatesList() throws Exception;
+	public List<Candidate> getCandidatesList() throws Exception;
 	
 	public void addCandidate(String data) throws Exception;
 	
@@ -18,7 +20,6 @@ public interface DbUtil {
 	
 	public void removeCandidate(String id) throws Exception;	
 	
-	public void addEvaluation(String id) throws Exception;
-	
+	public void addEvaluation(String id) throws Exception;	
 	
 }
