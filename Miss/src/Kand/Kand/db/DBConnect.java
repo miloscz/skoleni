@@ -1,15 +1,15 @@
 package Kand.Kand.db;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.List;
-
-import javax.ws.rs.core.Response;
 
 import org.bson.types.ObjectId;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.WriteResult;
@@ -19,9 +19,22 @@ public class DBConnect implements DbUtil {
 	
 	private static DBConnect instance;
 
-	public String getCandidates() {
-		// TODO Auto-generated method stub
-		return null;
+	@Override
+	public String getCandidates() throws Exception {
+		List<DBObject> candidates = new ArrayList<DBObject>();
+		DBCursor cursor = getDB().getCollection("candidates").find();
+		try {
+			while (cursor.hasNext()) {
+				DBObject cur = cursor.next();
+				candidates.add(cur);
+			}
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			cursor.close();
+		}
+		
+		return JSON.serialize(candidates);		
 	}
 
 	public void addCandidate(String data) throws Exception {
@@ -51,9 +64,9 @@ public class DBConnect implements DbUtil {
 		
 	}
 
-	public String getCandidate(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public String getCandidate(String id) {		
+		DBObject candidate = getDBOID(id);
+		return JSON.serialize(candidate);
 	}
 	
 	private DB getDB() {
