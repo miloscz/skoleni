@@ -1,0 +1,11 @@
+2014-11-19 11:10:56,206 [Worker-1] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\User\Documents\skoleni\Kand\pom.xml
+2014-11-19 11:10:57,273 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Kand:Kand:0.0.1-SNAPSHOT @ C:\Users\User\Documents\skoleni\Kand\pom.xml.
+2014-11-19 11:10:58,262 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Kand/src/main/java
+2014-11-19 11:10:58,268 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Kand/src/test/java
+2014-11-19 11:10:58,917 [Worker-7] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Kand:Kand:0.0.1-SNAPSHOT @ C:\Users\User\Documents\skoleni\Kand\pom.xml.
+2014-11-19 11:10:59,282 [Worker-1] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Project import completed 3 sec
+2014-11-19 11:11:00,327 [Worker-7] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Kand:Kand:0.0.1-SNAPSHOT @ C:\Users\User\Documents\skoleni\Kand\pom.xml.
+2014-11-19 11:11:00,481 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-11-19 11:11:00,481 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Documents\skoleni\Kand\src\main\resources
+2014-11-19 11:11:00,486 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-11-19 11:11:00,486 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Documents\skoleni\Kand\src\test\resources
