@@ -38,6 +38,7 @@ public class DBConnect implements DbUtil {
 
 	public void addCandidate(String data) throws Exception {
 		DBObject can = getDBO(data);
+		
 		getCol().insert(can);
 		
 	}
@@ -115,7 +116,22 @@ public class DBConnect implements DbUtil {
 	}
 	
 	private boolean checkCand(DBObject db) {
-		// TODO Auto-generated method stub
+		if(db.get("name")==null) {
+			return false;
+		}
+		if(db.get("surname")==null) {
+			return false;
+		}
+		if(db.get("age")==null) {
+			return false;
+		}
+		if(db.get("height")==null) {
+			return false;
+		}
+		if(db.get("weight")==null) {
+			return false;
+		}
+		
 		return true;
 	}
 
