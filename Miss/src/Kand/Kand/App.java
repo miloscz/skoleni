@@ -10,13 +10,18 @@ public class App
 {
     public static void main( String[] args )
     {
-        Candidate c = new Candidate();
-        c.setAge(10);
-        c.setName("david");
-        c.setSurname("stransky");
-        c.getRating().add(0);
-        c.getRating().add(8);
-        System.out.println(c);
+    	String[] a = new String[3];
+         
+    	Candidate c;
+		try {
+			c = new Candidate("David", "Stransky", "21", a, "44.4", "88.4", "0");
+			System.out.println(c);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    
+      
         
     	System.out.println( "Hello World!" );
     }
