@@ -3,7 +3,7 @@
     firstName: "Andrea",
     surname: "Novotna",
     age: "19",
-    heigth: "150",
+    height: "150",
     weight: "50",
     votes: "0",
     parameters:{
@@ -17,7 +17,7 @@
     firstName: "Barbora",
     surname: "Rybárová",
     age: "20",
-    heigth: "160",
+    height: "160",
     weight: "60",
     votes: "1",
     parameters:{
@@ -31,7 +31,7 @@
     firstName: "Cecilie",
     surname: "Morgensternová",
     age: "21",
-    heigth: "165",
+    height: "165",
     weight: "63",
     votes: "1",
     parameters:{
@@ -45,7 +45,7 @@
     firstName: "Dorota",
     surname: "Máchalová",
     age: "22",
-    heigth: "170",
+    height: "170",
     weight: "64",
     votes: "10",
     parameters:{
@@ -59,7 +59,7 @@
     firstName: "Emílie",
     surname: "Vašáryová",
     age: "24",
-    heigth: "168",
+    height: "168",
     weight: "66",
     votes: "9",
     parameters:{
@@ -73,7 +73,7 @@
     firstName: "Frëderyka",
     surname: "Förschtäinová",
     age: "25",
-    heigth: "166",
+    height: "166",
     weight: "64",
     votes: "8",
     parameters:{
@@ -87,7 +87,7 @@
     firstName: "Gudrun",
     surname: "Brangwenová",
     age: "26",
-    heigth: "164",
+    height: "164",
     weight: "61",
     votes: "18",
     parameters:{
@@ -101,7 +101,7 @@
     firstName: "Hedvika",
     surname: "Zdráhalová",
     age: "16",
-    heigth: "163",
+    height: "163",
     weight: "59",
     votes: "17",
     parameters:{
@@ -115,7 +115,7 @@
     firstName: "Iveta",
     surname: "Zemánková",
     age: "17",
-    heigth: "161",
+    height: "161",
     weight: "57",
     votes: "17",
     parameters:{
@@ -129,7 +129,7 @@
     firstName: "Jarmila",
     surname: "Šindlerová Barboøíková",
     age: "18",
-    heigth: "159",
+    height: "159",
     weight: "56",
     votes: "66",
     parameters:{
@@ -143,7 +143,7 @@
     firstName: "Klotylda",
     surname: "Saturninová",
     age: "19",
-    heigth: "156",
+    height: "156",
     weight: "51",
     votes: "56",
     parameters:{
@@ -157,7 +157,7 @@
     firstName: "Ludmila",
     surname: "Dvoøáková",
     age: "21",
-    heigth: "29",
+    height: "29",
     weight: "58",
     votes: "158",
     parameters:{
@@ -171,7 +171,7 @@
     firstName: "Margaret",
     surname: "Thatcherová",
     age: "99",
-    heigth: "199",
+    height: "199",
     weight: "69",
     votes: "9",
     parameters:{
@@ -185,7 +185,7 @@
     firstName: "Nikita",
     surname: "Chrušèovová",
     age: "35",
-    heigth: "135",
+    height: "135",
     weight: "35",
     votes: "5",
     parameters:{
@@ -199,7 +199,7 @@
     firstName: "Olga",
     surname: "Jevtušèenková",
     age: "32",
-    heigth: "132",
+    height: "132",
     weight: "42",
     votes: "13",
     parameters:{
@@ -213,7 +213,7 @@
     firstName: "Petrunie",
     surname: "Jekatìrinková",
     age: "26",
-    heigth: "146",
+    height: "146",
     weight: "46",
     votes: "6",
     parameters:{
@@ -227,7 +227,7 @@
     firstName: "Quintinie",
     surname: "Tichonovová",
     age: "28",
-    heigth: "148",
+    height: "148",
     weight: "48",
     votes: "8",
     parameters:{
@@ -241,7 +241,7 @@
     firstName: "Rubinie",
     surname: "Jevtušèenková",
     age: "27",
-    heigth: "147",
+    height: "147",
     weight: "47",
     votes: "7",
     parameters:{
@@ -255,7 +255,7 @@
     firstName: "Solimanie",
     surname: "Larionovová",
     age: "29",
-    heigth: "149",
+    height: "149",
     weight: "49",
     votes: "9",
     parameters:{
@@ -269,7 +269,7 @@
     firstName: "Trondheimie",
     surname: "Gagarinová",
     age: "30",
-    heigth: "155",
+    height: "155",
     weight: "51",
     votes: "2100",
     parameters:{
