@@ -43,8 +43,14 @@ public class DBConnect implements DbUtil {
 		
 	}
 
-	public void editCandidate(String id, String data) {
-		// TODO Auto-generated method stub
+	public void editCandidate(String id, String data) throws Exception{
+
+		DB db = getDB();
+		DBCollection collection = getCol();
+		
+		DBObject candidateToUpdate = getDBO(data);
+		
+		collection.update(new BasicDBObject("_id", new ObjectId(id)), candidateToUpdate);
 		
 	}
 
