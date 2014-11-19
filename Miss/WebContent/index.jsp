@@ -4,9 +4,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Miss</title>
+<link rel='stylesheet' href='style.css' type='text/css'>
+<title>Miss Plus4U 2014</title>
 </head>
 <body>
-<p>plus4u Miss 2014</p>
+<p></p>
+<table>
+<tr>
+<td>
+</td>
+</tr>
+
+</table>
+
+
+
 </body>
 </html>

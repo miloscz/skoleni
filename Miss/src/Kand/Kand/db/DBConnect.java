@@ -1,11 +1,18 @@
 package Kand.Kand.db;
 
 import java.net.UnknownHostException;
+import java.util.List;
 
+import javax.ws.rs.core.Response;
+
+import org.bson.types.ObjectId;
+
+import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.WriteResult;
 import com.mongodb.util.JSON;
 
 public class DBConnect implements DbUtil {
@@ -15,8 +22,9 @@ public class DBConnect implements DbUtil {
 		return null;
 	}
 
-	public void addCandidate(String data) {
-		// TODO Auto-generated method stub
+	public void addCandidate(String data) throws Exception {
+		DBObject can = getDBO(data);
+		getCol().insert(can);
 		
 	}
 
@@ -25,13 +33,19 @@ public class DBConnect implements DbUtil {
 		
 	}
 
-	public void removeCandidate(String id) {
-		// TODO Auto-generated method stub
+	public void removeCandidate(String id) throws Exception {
+	WriteResult wr = getCol().remove(new BasicDBObject("_id", new ObjectId(id)));
+	  if (wr.getN()!= 1) {
+		  throw new Exception("err");
+	  }
 		
 	}
 
-	public void addEvaluation(String id, String data) {
-		// TODO Auto-generated method stub
+	public void addEvaluation(String id) throws Exception {
+		DBObject db = getDBOID(id);
+		Integer r = Integer.parseInt((String) db.get("raiting"));
+		r++;
+		getCol().update(new BasicDBObject("_id", new ObjectId(id)), new BasicDBObject("raiting", r));
 		
 	}
 
@@ -50,11 +64,15 @@ public class DBConnect implements DbUtil {
 	    return client.getDB("kand");
 	}
 	
-	private DBCollection getCol(String col) {
-		return getDB().getCollection(col);
+	private DBCollection getCol() {
+		return getDB().getCollection("candidates");
 	}
 	
-	private Candidate getCandJSON(String data) throws Exception {
+	private Candidate getCandJSON(String data) throws Exception {	
+		return getCanFromDBO(getDBO(data));
+	}
+	
+	private DBObject getDBO(String data) throws Exception {
 		Object o  = JSON.parse(data);
 		DBObject db = null;
 		if (o instanceof DBObject) {
@@ -65,17 +83,41 @@ public class DBConnect implements DbUtil {
 		if (!checkCand(db)) {
 			throw new Exception("Chyba");
 		}
-		return getCanFromDBO(db);
+		return db;
 	}
 	
 	private Candidate getCanFromDBO(DBObject db) {
-		return new Candidate(db.get("name"), db.get("surname"), db.get("age"), db.get("measures"), db.get("heigh"), db.get("weight"), db.get("raiting"));
+		return new Candidate((String) db.get("name"),(String) db.get("surname"),(String) db.get("age"),(String) db.get("measures"),(String) db.get("heigh"),(String) db.get("weight"),(String) db.get("raiting"));
 	}
 	
-
+	private DBObject getDBOID(String id) {
+		DBObject db = getCol().findOne(new BasicDBObject("_id", new ObjectId(id)));
+		return db;
+	}
+	
 	private boolean checkCand(DBObject db) {
 		// TODO Auto-generated method stub
 		return true;
 	}
+
+	@Override
+	public DbUtil getInstance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Candidate getCandidatesObj() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Candidate> getCandidatesList() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 }
