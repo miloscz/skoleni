@@ -107,7 +107,7 @@ public class DBConnect implements DbUtil {
 	}
 	
 	private Candidate getCanFromDBO(DBObject db) throws Exception {
-		return new Candidate((String) db.get("name"),(String) db.get("surname"),(String) db.get("age"), null,(String) db.get("heigh"),(String) db.get("weight"),(String) db.get("raiting"));
+		return new Candidate((String) db.get("_id"), (String) db.get("name"),(String) db.get("surname"),(String) db.get("age"), null,(String) db.get("heigh"),(String) db.get("weight"),(String) db.get("raiting"));
 	}
 	
 	private DBObject getDBOID(String id) {
