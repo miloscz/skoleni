@@ -1,9 +1,9 @@
 package Kand.Kand.db;
 
 public interface DbUtil {
-	public List<Candidate> getCandidates();
+	public String getCandidates();
 	
-	public Candidate getCandidate(String id);
+	public String getCandidate(String id);
 	
 	public void addCandidate(String data);
 	
