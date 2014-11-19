@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [19/Nov/2014:10:17:13 +0100] "GET /mongo/api/v1/movie HTTP/1.1" 500 3961 http-bio-10001-exec-1 275
+0:0:0:0:0:0:0:1 - - [19/Nov/2014:10:17:13 +0100] "GET /favicon.ico HTTP/1.1" 404 - http-bio-10001-exec-2 0
+0:0:0:0:0:0:0:1 - - [19/Nov/2014:10:17:40 +0100] "GET /movie HTTP/1.1" 404 - http-bio-10001-exec-3 0
+0:0:0:0:0:0:0:1 - - [19/Nov/2014:10:17:45 +0100] "GET /movie HTTP/1.1" 404 - http-bio-10001-exec-5 0
+0:0:0:0:0:0:0:1 - - [19/Nov/2014:10:17:50 +0100] "GET /mongo/api/v1/movie HTTP/1.1" 500 3961 http-bio-10001-exec-6 179
+0:0:0:0:0:0:0:1 - - [19/Nov/2014:10:28:40 +0100] "GET /mongo/api/v1/movie HTTP/1.1" 404 967 http-bio-10001-exec-1 61
