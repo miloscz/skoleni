@@ -8,10 +8,13 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import Kand.Kand.db.DBConnect;
+import Kand.Kand.db.DbUtil;
+
 @Path("/")
 public class Rest {
 
-	TestRest rest = new TestRest();
+	DbUtil rest = DBConnect.getInstance();
 	
 	@GET
 	@Path("/api/candidates")
@@ -95,11 +98,10 @@ public class Rest {
 	
 	@POST
 	@Path("/api/candidate/{CANDIDATE_ID}/evaluation/add")
-	@Consumes("application/json")
-	public Response addEvaluation(@PathParam("CANDIDATE_ID") String idCandidate, String data){
+	public Response addEvaluation(@PathParam("CANDIDATE_ID") String idCandidate){
 		
 		try{
-			rest.addEvaluation(idCandidate, data);
+			rest.addEvaluation(idCandidate);
 		}catch(Exception e){
 			return Response.status(400).build();
 		}
