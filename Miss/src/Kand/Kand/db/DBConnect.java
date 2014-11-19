@@ -54,17 +54,24 @@ public class DBConnect implements DbUtil {
 		return getDB().getCollection(col);
 	}
 	
-	private Candidate getCand(String data) throws Exception {
+	private Candidate getCandJSON(String data) throws Exception {
 		Object o  = JSON.parse(data);
 		DBObject db = null;
 		if (o instanceof DBObject) {
 			db = (DBObject) o;
+		} else {
+			throw new Exception("Chyba");
 		}
 		if (!checkCand(db)) {
 			throw new Exception("Chyba");
 		}
-		return null;
+		return getCanFromDBO(db);
 	}
+	
+	private Candidate getCanFromDBO(DBObject db) {
+		return new Candidate(db.get("name"), db.get("surname"), db.get("age"), db.get("measures"), db.get("heigh"), db.get("weight"), db.get("raiting"));
+	}
+	
 
 	private boolean checkCand(DBObject db) {
 		// TODO Auto-generated method stub
