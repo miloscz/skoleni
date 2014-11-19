@@ -13,7 +13,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/mongo-java-driver-2.13.0-rc0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/git/skoleni/mongo-java-driver-2.13.0-rc0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/com/sun/jersey/jersey-core/1.8/jersey-core-1.8.jar">
 		<attributes>
