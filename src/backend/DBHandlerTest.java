@@ -15,6 +15,7 @@ public class DBHandlerTest {
 		DBHandler handler = DBHandler.getInstance();
 		String body = "{ \"firstName\": \"Andrea\", \"surname\": \"Novotna\", \"age\": \"19\", \"height\": \"150\", \"weight\": \"50\", \"votes\": \"0\", \"parameters\":{ \"chest\": \"200\", \"waist\": \"20\", \"hips\": \"100\" }";
 		String candidate = handler.createCandidate(body);
+		System.out.println(candidate);
 		
 	}
 
