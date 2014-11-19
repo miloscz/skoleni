@@ -1,3 +1,4 @@
+[
 {
     name: "Andrea",
     surname: "Novotna",
@@ -11,3 +12,186 @@
         hips: "100"
         }
 }
+,
+{
+    name: "Barbora",
+    surname: "Rybárová",
+    age: "20",
+    heigth: "160",
+    weight: "60",
+    votes: "1",
+    parameters:{
+        chest: "180",
+        waist: "30",
+        hips: "98"
+        }
+}
+,
+{
+    name: "Cecilie",
+    surname: "Morgensternová",
+    age: "21",
+    heigth: "165",
+    weight: "63",
+    votes: "1",
+    parameters:{
+        chest: "160",
+        waist: "40",
+        hips: "96"
+        }
+}
+,
+{
+    name: "Dorota",
+    surname: "Máchalová",
+    age: "22",
+    heigth: "170",
+    weight: "64",
+    votes: "10",
+    parameters:{
+        chest: "140",
+        waist: "42",
+        hips: "94"
+        }
+}
+,
+{
+    name: "Emílie",
+    surname: "Vašáryová",
+    age: "24",
+    heigth: "168",
+    weight: "66",
+    votes: "9",
+    parameters:{
+        chest: "120",
+        waist: "44",
+        hips: "92"
+        }
+}
+,
+{
+    name: "Frëderyka",
+    surname: "Förschtäinová",
+    age: "25",
+    heigth: "166",
+    weight: "64",
+    votes: "8",
+    parameters:{
+        chest: "110",
+        waist: "46",
+        hips: "90"
+        }
+}
+,
+{
+    name: "Gudrun",
+    surname: "Brangwenová",
+    age: "26",
+    heigth: "164",
+    weight: "61",
+    votes: "18",
+    parameters:{
+        chest: "110",
+        waist: "46",
+        hips: "89"
+        }
+}
+,
+{
+    name: "Hedvika",
+    surname: "Zdráhalová",
+    age: "16",
+    heigth: "163",
+    weight: "59",
+    votes: "17",
+    parameters:{
+        chest: "90",
+        waist: "59",
+        hips: "90"
+        }
+}
+,
+{
+    name: "Iveta",
+    surname: "Zemánková",
+    age: "17",
+    heigth: "161",
+    weight: "57",
+    votes: "17",
+    parameters:{
+        chest: "91",
+        waist: "60",
+        hips: "90"
+        }
+}
+,
+{
+    name: "Jarmila",
+    surname: "Šindlerová Barboøíková",
+    age: "18",
+    heigth: "159",
+    weight: "56",
+    votes: "66",
+    parameters:{
+        chest: "90",
+        waist: "60",
+        hips: "90"
+        }
+}
+,
+{
+    name: "Klotylda",
+    surname: "Saturninová",
+    age: "19",
+    heigth: "156",
+    weight: "51",
+    votes: "56",
+    parameters:{
+        chest: "90",
+        waist: "60",
+        hips: "90"
+        }
+}
+,
+{
+    name: "Ludmila",
+    surname: "Dvoøáková",
+    age: "21",
+    heigth: "29",
+    weight: "58",
+    votes: "158",
+    parameters:{
+        chest: "90",
+        waist: "60",
+        hips: "90"
+        }
+}
+,
+{
+    name: "Margaret",
+    surname: "Thatcherová",
+    age: "99",
+    heigth: "199",
+    weight: "69",
+    votes: "9",
+    parameters:{
+        chest: "99",
+        waist: "69",
+        hips: "99"
+        }
+}
+,
+{
+    name: "Nikita",
+    surname: "Chrušèovová",
+    age: "35",
+    heigth: "135",
+    weight: "35",
+    votes: "5",
+    parameters:{
+        chest: "95",
+        waist: "55",
+        hips: "90"
+        }
+}
+]
