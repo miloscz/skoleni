@@ -65,7 +65,7 @@ public class DBConnect implements DbUtil {
 		DBObject db = getDBOID(id);
 		Integer r = Integer.parseInt((String) db.get("rating"));
 		r++;
-		getCol().update(new BasicDBObject("_id", new ObjectId(id)), new BasicDBObject("rating", r));
+		getCol().update(new BasicDBObject("_id", new ObjectId(id)), new BasicDBObject("$set", new BasicDBObject("rating", r)));
 		
 	}
 
