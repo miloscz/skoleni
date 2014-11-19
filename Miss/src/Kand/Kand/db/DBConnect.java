@@ -63,9 +63,9 @@ public class DBConnect implements DbUtil {
 
 	public void addEvaluation(String id) throws Exception {
 		DBObject db = getDBOID(id);
-		Integer r = Integer.parseInt((String) db.get("raiting"));
+		Integer r = Integer.parseInt((String) db.get("rating"));
 		r++;
-		getCol().update(new BasicDBObject("_id", new ObjectId(id)), new BasicDBObject("raiting", r));
+		getCol().update(new BasicDBObject("_id", new ObjectId(id)), new BasicDBObject("rating", r));
 		
 	}
 
@@ -107,7 +107,7 @@ public class DBConnect implements DbUtil {
 	}
 	
 	private Candidate getCanFromDBO(DBObject db) throws Exception {
-		return new Candidate((String) db.get("_id"), (String) db.get("name"),(String) db.get("surname"),(String) db.get("age"), null,(String) db.get("heigh"),(String) db.get("weight"),(String) db.get("raiting"));
+		return new Candidate((String) db.get("_id"), (String) db.get("name"),(String) db.get("surname"),(String) db.get("age"), null,(String) db.get("height"),(String) db.get("weight"),(String) db.get("rating"));
 	}
 	
 	private DBObject getDBOID(String id) {
