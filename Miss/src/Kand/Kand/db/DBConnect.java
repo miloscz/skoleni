@@ -15,8 +15,8 @@ public class DBConnect implements DbUtil {
 		return null;
 	}
 
-	public void addCandidate(String data) {
-		// TODO Auto-generated method stub
+	public void addCandidate(String data) throws Exception {
+		DBObject can = getDBO(data);
 		
 	}
 
@@ -54,7 +54,11 @@ public class DBConnect implements DbUtil {
 		return getDB().getCollection(col);
 	}
 	
-	private Candidate getCandJSON(String data) throws Exception {
+	private Candidate getCandJSON(String data) throws Exception {	
+		return getCanFromDBO(getDBO(data));
+	}
+	
+	private DBObject getDBO(String data) throws Exception {
 		Object o  = JSON.parse(data);
 		DBObject db = null;
 		if (o instanceof DBObject) {
@@ -65,11 +69,11 @@ public class DBConnect implements DbUtil {
 		if (!checkCand(db)) {
 			throw new Exception("Chyba");
 		}
-		return getCanFromDBO(db);
+		return db;
 	}
 	
 	private Candidate getCanFromDBO(DBObject db) {
-		return new Candidate(db.get("name"), db.get("surname"), db.get("age"), db.get("measures"), db.get("heigh"), db.get("weight"), db.get("raiting"));
+		return new Candidate((String) db.get("name"),(String) db.get("surname"),(String) db.get("age"),(String) db.get("measures"),(String) db.get("heigh"),(String) db.get("weight"),(String) db.get("raiting"));
 	}
 	
 
