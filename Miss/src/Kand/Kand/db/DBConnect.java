@@ -22,7 +22,7 @@ public class DBConnect implements DbUtil {
 	@Override
 	public String getCandidates() throws Exception {
 		List<DBObject> candidates = new ArrayList<DBObject>();
-		DBCursor cursor = getDB().getCollection("candidates").find();
+		DBCursor cursor = getCol().find();
 		try {
 			while (cursor.hasNext()) {
 				DBObject cur = cursor.next();
@@ -45,7 +45,6 @@ public class DBConnect implements DbUtil {
 
 	public void editCandidate(String id, String data) throws Exception{
 
-		DB db = getDB();
 		DBCollection collection = getCol();
 		
 		DBObject candidateToUpdate = getDBO(data);
@@ -129,15 +128,25 @@ public class DBConnect implements DbUtil {
 	}
 
 	@Override
-	public Candidate getCandidatesObj() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public Candidate getCandidateObj(String id) throws Exception {
+		return getCanFromDBO(getDBOID(id));
 	}
 
 	@Override
 	public List<Candidate> getCandidatesList() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		List<Candidate> candidates = new ArrayList<Candidate>();
+		DBCursor cursor = getCol().find();
+		try {
+			while (cursor.hasNext()) {
+				DBObject cur = cursor.next();
+				candidates.add(getCanFromDBO(cur));
+			}
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			cursor.close();
+		}
+		return candidates;
 	}
 
 
