@@ -3,7 +3,7 @@ package Kand.Kand.db;
 public interface DbUtil {
 	public List<Candidate> getCandidates();
 	
-	public Candidate getCandidate();
+	public Candidate getCandidate(String id);
 	
 	public void addCandidate(String data);
 	
