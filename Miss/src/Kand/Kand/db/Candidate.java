@@ -1,19 +1,10 @@
 package Kand.Kand.db;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.codehaus.jackson.annotate.JsonCreator;
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.annotate.JsonPropertyOrder;
-
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBObject;
 
 
 public class Candidate {
 
+	private String id;
 	private String name;
 	private String surname;
 	private Integer age;
@@ -24,7 +15,7 @@ public class Candidate {
 	private Integer rating;		
 	
 	
-	public Candidate(String aName,
+	public Candidate(String id, String aName,
 			String aSurname,
 			String aAge,
 			String[] aMeasures,
@@ -33,6 +24,7 @@ public class Candidate {
 			String aRating) throws Exception {
 
 		super();
+		this.id = id;
 		this.name = aName;
 		this.surname = aSurname;
 
@@ -54,6 +46,14 @@ public class Candidate {
 			throw new Exception(e.getMessage());
 		}
 
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public void incRating() {

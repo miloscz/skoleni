@@ -10,7 +10,7 @@ public interface DbUtil {
 	
 	public String getCandidate(String id) throws Exception;
 	
-	public Candidate getCandidatesObj() throws Exception;
+	public Candidate getCandidateObj(String id) throws Exception;
 	
 	public List<Candidate> getCandidatesList() throws Exception;
 	
