@@ -1,6 +1,6 @@
 [
 {
-    name: "Andrea",
+    firstName: "Andrea",
     surname: "Novotna",
     age: "19",
     heigth: "150",
@@ -14,7 +14,7 @@
 }
 ,
 {
-    name: "Barbora",
+    firstName: "Barbora",
     surname: "Rybárová",
     age: "20",
     heigth: "160",
@@ -28,7 +28,7 @@
 }
 ,
 {
-    name: "Cecilie",
+    firstName: "Cecilie",
     surname: "Morgensternová",
     age: "21",
     heigth: "165",
@@ -42,7 +42,7 @@
 }
 ,
 {
-    name: "Dorota",
+    firstName: "Dorota",
     surname: "Máchalová",
     age: "22",
     heigth: "170",
@@ -56,7 +56,7 @@
 }
 ,
 {
-    name: "Emílie",
+    firstName: "Emílie",
     surname: "Vašáryová",
     age: "24",
     heigth: "168",
@@ -70,7 +70,7 @@
 }
 ,
 {
-    name: "Frëderyka",
+    firstName: "Frëderyka",
     surname: "Förschtäinová",
     age: "25",
     heigth: "166",
@@ -84,7 +84,7 @@
 }
 ,
 {
-    name: "Gudrun",
+    firstName: "Gudrun",
     surname: "Brangwenová",
     age: "26",
     heigth: "164",
@@ -98,7 +98,7 @@
 }
 ,
 {
-    name: "Hedvika",
+    firstName: "Hedvika",
     surname: "Zdráhalová",
     age: "16",
     heigth: "163",
@@ -112,7 +112,7 @@
 }
 ,
 {
-    name: "Iveta",
+    firstName: "Iveta",
     surname: "Zemánková",
     age: "17",
     heigth: "161",
@@ -126,7 +126,7 @@
 }
 ,
 {
-    name: "Jarmila",
+    firstName: "Jarmila",
     surname: "Šindlerová Barboøíková",
     age: "18",
     heigth: "159",
@@ -140,7 +140,7 @@
 }
 ,
 {
-    name: "Klotylda",
+    firstName: "Klotylda",
     surname: "Saturninová",
     age: "19",
     heigth: "156",
@@ -154,7 +154,7 @@
 }
 ,
 {
-    name: "Ludmila",
+    firstName: "Ludmila",
     surname: "Dvoøáková",
     age: "21",
     heigth: "29",
@@ -168,7 +168,7 @@
 }
 ,
 {
-    name: "Margaret",
+    firstName: "Margaret",
     surname: "Thatcherová",
     age: "99",
     heigth: "199",
@@ -182,7 +182,7 @@
 }
 ,
 {
-    name: "Nikita",
+    firstName: "Nikita",
     surname: "Chrušèovová",
     age: "35",
     heigth: "135",
@@ -191,6 +191,90 @@
     parameters:{
         chest: "95",
         waist: "55",
+        hips: "90"
+        }
+}
+,
+{
+    firstName: "Olga",
+    surname: "Jevtušèenková",
+    age: "32",
+    heigth: "132",
+    weight: "42",
+    votes: "13",
+    parameters:{
+        chest: "95",
+        waist: "45",
+        hips: "95"
+        }
+}
+,
+{
+    firstName: "Petrunie",
+    surname: "Jekatìrinková",
+    age: "26",
+    heigth: "146",
+    weight: "46",
+    votes: "6",
+    parameters:{
+        chest: "96",
+        waist: "46",
+        hips: "96"
+        }
+}
+,
+{
+    firstName: "Quintinie",
+    surname: "Tichonovová",
+    age: "28",
+    heigth: "148",
+    weight: "48",
+    votes: "8",
+    parameters:{
+        chest: "98",
+        waist: "48",
+        hips: "98"
+        }
+}
+,
+{
+    firstName: "Rubinie",
+    surname: "Jevtušèenková",
+    age: "27",
+    heigth: "147",
+    weight: "47",
+    votes: "7",
+    parameters:{
+        chest: "97",
+        waist: "47",
+        hips: "97"
+        }
+}
+,
+{
+    firstName: "Solimanie",
+    surname: "Larionovová",
+    age: "29",
+    heigth: "149",
+    weight: "49",
+    votes: "9",
+    parameters:{
+        chest: "99",
+        waist: "49",
+        hips: "99"
+        }
+}
+,
+{
+    firstName: "Trondheimie",
+    surname: "Gagarinová",
+    age: "30",
+    heigth: "155",
+    weight: "51",
+    votes: "2100",
+    parameters:{
+        chest: "91",
+        waist: "61",
         hips: "90"
         }
 }
