@@ -28,7 +28,7 @@ public class DBConnect implements DbUtil {
 				candidates.add(cur);
 			}
 		} catch (Exception e) {
-			throw e;
+			throw new DBException("Err connecting DB.");
 		} finally {
 			cursor.close();
 		}
@@ -38,6 +38,7 @@ public class DBConnect implements DbUtil {
 
 	public void addCandidate(String data) throws Exception {
 		DBObject can = getDBO(data);
+		
 		getCol().insert(can);
 		
 	}
@@ -78,7 +79,7 @@ public class DBConnect implements DbUtil {
 		try {
 			client = new MongoClient();
 		} catch (UnknownHostException e) {
-			e.printStackTrace();
+			throw new DBException("Err connecting DB.");
 		}
 	    return client.getDB("kand");
 	}
@@ -97,10 +98,10 @@ public class DBConnect implements DbUtil {
 		if (o instanceof DBObject) {
 			db = (DBObject) o;
 		} else {
-			throw new Exception("Chyba");
+			throw new DBException("JSON err");
 		}
 		if (!checkCand(db)) {
-			throw new Exception("Chyba");
+			throw new DBException("JSON err");
 		}
 		return db;
 	}
@@ -115,7 +116,22 @@ public class DBConnect implements DbUtil {
 	}
 	
 	private boolean checkCand(DBObject db) {
-		// TODO Auto-generated method stub
+		if(db.get("name")==null) {
+			return false;
+		}
+		if(db.get("surname")==null) {
+			return false;
+		}
+		if(db.get("age")==null) {
+			return false;
+		}
+		if(db.get("height")==null) {
+			return false;
+		}
+		if(db.get("weight")==null) {
+			return false;
+		}
+		
 		return true;
 	}
 
