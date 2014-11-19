@@ -2,6 +2,9 @@ package backend;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
+import org.entities.Candidate;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +28,6 @@ public class DBHandlerTest {
 
 	@Test
 	public void testGetCandidates() {
-		fail("Not yet implemented");
 	}
 
 	@Test
