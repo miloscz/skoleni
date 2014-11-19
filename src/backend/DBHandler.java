@@ -22,13 +22,25 @@ import interfaces.IDBHandler;
 public class DBHandler implements IDBHandler {
 	private static DBHandler instance;
 	private DB db;
-
+	private DBHandler(){};
+	
 	@Override
 	public List<Candidate> getCandidates() {
 		DBCollection candidateCol;
 		DBCursor obj = null;
 		candidateCol = getDatabase().getCollection("candidate");
 		obj = candidateCol.find();
+		String result = obj.toString();
+		obj.close();
+		return CandidateFactory.parse(result);
+	}
+	
+	@Override
+	public List<Candidate> getCandidates(int count, int page) {
+		DBCollection candidateCol;
+		DBCursor obj = null;
+		candidateCol = getDatabase().getCollection("candidate");
+		obj = candidateCol.find().skip(page).limit(count);
 		String result = obj.toString();
 		obj.close();
 		return CandidateFactory.parse(result);
