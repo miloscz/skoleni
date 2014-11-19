@@ -1,6 +1,8 @@
 package Kand.Kand.db;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -54,7 +56,7 @@ public class DBConnect implements DbUtil {
 		return getDB().getCollection(col);
 	}
 	
-	private Candidate getCand(String data) throws Exception {
+	private Candidate getCandFromJson(String data) throws Exception {
 		Object o  = JSON.parse(data);
 		DBObject db = null;
 		if (o instanceof DBObject) {
@@ -63,8 +65,16 @@ public class DBConnect implements DbUtil {
 		if (!checkCand(db)) {
 			throw new Exception("Chyba");
 		}
-		return null;
+		return getCandFromDB(db);
+		
 	}
+	
+	private Candidate getCandFromDB(DBObject o) {
+		List<Integer> raitings = new ArrayList<Integer>();
+		return new Candidate(o.get("name"), o.get("surname"), o.get("age"), o.get("measures"), o.get("heigh"), o.get("weigh"), raitings);
+	}
+	
+
 
 	private boolean checkCand(DBObject db) {
 		// TODO Auto-generated method stub
