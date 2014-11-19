@@ -16,6 +16,8 @@ import com.mongodb.WriteResult;
 import com.mongodb.util.JSON;
 
 public class DBConnect implements DbUtil {
+	
+	private static DBConnect instance;
 
 	public String getCandidates() {
 		// TODO Auto-generated method stub
@@ -86,8 +88,8 @@ public class DBConnect implements DbUtil {
 		return db;
 	}
 	
-	private Candidate getCanFromDBO(DBObject db) {
-		return new Candidate((String) db.get("name"),(String) db.get("surname"),(String) db.get("age"),(String) db.get("measures"),(String) db.get("heigh"),(String) db.get("weight"),(String) db.get("raiting"));
+	private Candidate getCanFromDBO(DBObject db) throws Exception {
+		return new Candidate((String) db.get("name"),(String) db.get("surname"),(String) db.get("age"), null,(String) db.get("heigh"),(String) db.get("weight"),(String) db.get("raiting"));
 	}
 	
 	private DBObject getDBOID(String id) {
@@ -100,10 +102,11 @@ public class DBConnect implements DbUtil {
 		return true;
 	}
 
-	@Override
-	public DbUtil getInstance() {
-		// TODO Auto-generated method stub
-		return null;
+	public static DbUtil getInstance() {
+		if (instance == null) {
+			instance = new DBConnect();
+		}
+		return instance;
 	}
 
 	@Override

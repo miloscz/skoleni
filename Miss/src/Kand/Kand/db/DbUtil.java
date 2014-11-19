@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface DbUtil {
 	
-	public DbUtil getInstance();
+
 	
 	public String getCandidates() throws Exception;
 	
