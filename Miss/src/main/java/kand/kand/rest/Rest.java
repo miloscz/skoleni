@@ -1,4 +1,4 @@
-package cz.unicorn.mongo.rest;
+package kand.kand.rest;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -8,14 +8,14 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-
 @Path("/")
 public class Rest {
 
-	DbUtil rest = DBConnect.getInstance();
+	TestRest rest = new TestRest();
 	
 	@GET
-	@Path("/candidates")
+	@Path("/api/candidates")
+	@Consumes("application/json")
 	@Produces("application/json")
 	public Response getCandidates(){
 		
@@ -31,8 +31,8 @@ public class Rest {
 		return Response.status(200).entity(candidates).build();
 	}
 	
-	@GET
-	@Path("/candidate/{CANTIDATE_ID}")
+	@POST
+	@Path("/api/candidate/{CANTIDATE_ID}")
 	@Produces("application/json")
 	public Response getCandidate(@PathParam("CANDIDATE_ID") String id)
 	{String candidate;
@@ -48,7 +48,7 @@ public class Rest {
 	
 	@POST
 	@Consumes("application/json")
-	@Path("/candidate/create")
+	@Path("/api/candidate/create")
 	public Response addCandidate(String data){
 		
 		try{
@@ -63,7 +63,7 @@ public class Rest {
 	
 	
 	@POST
-	@Path("/candidate/{CANDIDATE_ID}/edit")
+	@Path("/api/candidate/{CANDIDATE_ID}/edit")
 	@Consumes("application/json")
 	public Response editCandidate(@PathParam("CANDIDATE_ID") String idCandidate , String data){
 		
@@ -78,7 +78,7 @@ public class Rest {
 	}
 	
 	@POST
-	@Path("/candidate/{CANDIDATE_ID}/remove")
+	@Path("/api/candidate/{CANDIDATE_ID}/remove")
 	@Consumes("application/json")
 	public Response removeCandidate(@PathParam("CANDIDATE_ID") String idCandidate){
 		
@@ -94,8 +94,9 @@ public class Rest {
 	
 	
 	@POST
-	@Path("/candidate/{CANDIDATE_ID}/evaluation/add")
-	public Response addEvaluation(@PathParam("CANDIDATE_ID") String idCandidate){
+	@Path("/api/candidate/{CANDIDATE_ID}/evaluation/add")
+	@Consumes("application/json")
+	public Response addEvaluation(@PathParam("CANDIDATE_ID") String idCandidate, String data){
 		
 		try{
 			rest.addEvaluation(idCandidate);
