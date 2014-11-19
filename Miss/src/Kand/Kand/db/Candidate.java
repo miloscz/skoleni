@@ -13,51 +13,46 @@ public class Candidate {
 	private Double height;
 	private Double weight;
 	
-	private List<Integer> rating;	
+	private Integer rating;	
 	
-	/**
-	 * Vraci prumerne hodnoceni kandidata
-	 * @return double
-	 */
-	public double getAverageRating(){
+	
+	public Candidate(
+			String name, 
+			String surname, 
+			Integer age,
+			Integer[] measures, 
+			Double height, 
+			Double weight, 
+			Integer rating) {
 		
-		double sumRating = 0;
-		List<Integer> iRating = getRating();
-				
-		for (Integer ratingItem : iRating) {
-			sumRating += 	ratingItem;		
-		}
-		
-		int len = iRating.size();
-		double result = 0;
-		if((len)>0){
-			result = (double)sumRating/(double)len;			
-		}
-		
-		return result;		
+		super();		
+		this.name = name;
+		this.surname = surname;
+		this.age = age;
+		this.measures = measures;
+		this.height = height;
+		this.weight = weight;
+		this.rating = rating;
 	}
+
+
+	public void incRating(){
+		rating=rating++;
+	}
+		
 	
-	public void addRating(Integer aRating){
-		getRating().add(Math.abs(aRating));		
-	}	
-	
+	public Integer getRating() {
+		return rating;
+	}
+
+	public void setRating(Integer rating) {
+		this.rating = rating;
+	}
+
 	@Override
 	public String toString() {
 		return "Candidate [name=" + name + ", surname=" + surname
-				+ ", getAverageRating()=" + getAverageRating() + "]";
-	}
-	
-
-
-	/**
-	 * Vraci list hodnoceni, pokud nebylo jeste hodnoceno vraci prazdnou novou kolekci.
-	 * @return
-	 */
-	public List<Integer> getRating() {		
-		if(rating==null){			
-			rating = new ArrayList<Integer>();
-		}
-		return rating;
+				+ ", getAverageRating()="+ "]";
 	}
 	
 	public String getName() {
