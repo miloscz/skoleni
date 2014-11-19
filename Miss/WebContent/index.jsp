@@ -1,3 +1,4 @@
+<%@page import="Kand.Kand.db.DbUtil"%>
 <%@page import="java.util.List"%>
 <%@page import="Kand.Kand.db.Candidate"%>
 <%@page import="Kand.Kand.db.DBConnect"%>
@@ -11,7 +12,7 @@
 <title>Miss Plus4U 2014</title>
 </head>
 <%
-	DBConnect db = new DBConnect();
+	DbUtil db= DBConnect.getInstance();
 	List<Candidate> LC = db.getCandidatesList();
 %>
 <body>
