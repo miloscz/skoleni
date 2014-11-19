@@ -52,7 +52,7 @@ public class DBHandler implements IDBHandler {
 	}
 
 	@Override
-	public String createCandidate(String body) throws Exception {
+	public String createCandidate(String body) throws UnknownHostException {
 		DBCollection candidateCol = getDatabase().getCollection("candidate");
 		BasicDBObject obj = (BasicDBObject)JSON.parse(body);
 		candidateCol.insert(obj);
