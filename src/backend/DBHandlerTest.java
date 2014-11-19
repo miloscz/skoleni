@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.mongodb.util.JSON;
+//import com.mongodb.util.JSON;
 
 public class DBHandlerTest {
 
