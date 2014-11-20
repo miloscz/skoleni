@@ -69,7 +69,8 @@ table {border-style: groove; border-collapse: separate;}
 					<%=miss.getHeight()%>
 					<br>Vaha:
 					<%=miss.getWeight()%>
-					<br>
+					<br>Pocet hlasu:
+					<%=miss.getRating()%>
 					<form action="VoteAction.jsp" method="get">
 						<input value="<%=miss.getId()%>" name="id" type="hidden">
 						<input value="Hlasuj" type="submit">
