@@ -6,7 +6,7 @@
             "age": "22",
             "height": "160",
             "weight": "55",
-            "rating": 0
+            "rating": "0"
         },
         {
             "name": "Ana",
@@ -14,7 +14,7 @@
             "age": "21",
             "height": "140",
             "weight": "51",
-            "rating": 0
+            "rating": "0"
         },
         {
             "name": "Petra",
@@ -22,7 +22,7 @@
             "age": "20",
             "height": "150",
             "weight": "52",
-            "rating": 0
+            "rating": "0"
         },
         {
             "name": "Michala",
@@ -30,7 +30,7 @@
             "age": "19",
             "height": "130",
             "weight": "54",
-            "rating": 0
+            "rating": "0"
         },
         {
             "name": "Adama",
@@ -38,7 +38,7 @@
             "age": "17",
             "height": "180",
             "weight": "55",
-            "rating": 0
+            "rating": "0"
         },
         {
             "name": "Jitka",
@@ -46,7 +46,7 @@
             "age": "25",
             "height": "198",
             "weight": "56",
-            "rating": 0
+            "rating": "0"
         },
         {
             "name": "Monika",
@@ -54,7 +54,7 @@
             "age": "30",
             "height": "165",
             "weight": "57",
-            "rating": 0
+            "rating": "0"
         },
         {
             "name": "Veronika",
@@ -62,7 +62,7 @@
             "age": "25",
             "height": "145",
             "weight": "53",
-            "rating": 0
+            "rating": "0"
         },
         {
             "name": "Zita",
@@ -70,7 +70,7 @@
             "age": "24",
             "height": "130",
             "weight": "54",
-            "rating": 0
+            "rating": "0"
         },
         {
             "name": "Petra",
@@ -78,7 +78,7 @@
             "age": "22",
             "height": "145",
             "weight": "50",
-            "rating": 0
+            "rating": "0"
         }
     ]
 }
