@@ -8,8 +8,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel='stylesheet' href='style.css' type='text/css'>
 <title>Miss Plus4U 2014</title>
+<style>
+p {color:blue}
+body {background-color: #c9c9c9;}
+table {border-style: groove;}
+.candidate div {width: 300px;}
+</style>
 </head>
 <%
 	DbUtil db= DBConnect.getInstance();
@@ -22,7 +27,7 @@
 				for (Candidate miss : LC) {
 			%>
 			<td>
-				<div id="candidate">
+				<div id="candidate" align=center>
 					Divka cislo:
 					<%=miss.getId()%><br> <img id="img"
 						src="http://www.oceanbluemagazine.com/wpimages/wpfa7e4e56_06.png"
