@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 
 
 import backend.DBHandler;
-
+@Path("/")
 public class RESTClient {
 
 	@GET
@@ -29,6 +29,7 @@ public class RESTClient {
 	@POST
 	@Path("/")
 	public Response createCandidate(String data) {
+		System.out.println("test");
 		String id = null;
 		try {
 			id = DBHandler.getInstance().createCandidate(data);

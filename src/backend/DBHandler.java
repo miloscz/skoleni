@@ -25,25 +25,25 @@ public class DBHandler implements IDBHandler {
 	private DBHandler(){};
 	
 	@Override
-	public List<Candidate> getCandidates() {
+	public List<Candidate> getCandidates() throws UnknownHostException {
 		DBCollection candidateCol;
 		DBCursor obj = null;
 		candidateCol = getDatabase().getCollection("candidate");
 		obj = candidateCol.find();
 		String result = obj.toString();
 		obj.close();
-		return CandidateFactory.parse(result);
+		return null; //TODO CandidateFactory.parse(result);
 	}
 	
 	@Override
-	public List<Candidate> getCandidates(int count, int page) {
+	public List<Candidate> getCandidates(int count, int page) throws UnknownHostException {
 		DBCollection candidateCol;
 		DBCursor obj = null;
 		candidateCol = getDatabase().getCollection("candidate");
 		obj = candidateCol.find().skip(page).limit(count);
 		String result = obj.toString();
 		obj.close();
-		return CandidateFactory.parse(result);
+		return null;//TODO CandidateFactory.parse(result);
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public class DBHandler implements IDBHandler {
 	}
 
 	@Override
-	public String getCandidate(String id) {
+	public String getCandidate(String id) throws UnknownHostException {
 		DBCollection candidateCol;
 		candidateCol = getDatabase().getCollection("candidate");
 		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
@@ -68,7 +68,7 @@ public class DBHandler implements IDBHandler {
 		DBCollection candidateCol = getDatabase().getCollection("candidate");
 		BasicDBObject obj = (BasicDBObject)JSON.parse(body);
 		candidateCol.insert(obj);
-		candidateCol.ensureIndex(new BasicDBObject("name","1"));
+		candidateCol.ensureIndex(new BasicDBObject("name",false));
 		String result = obj.get("_id").toString();
 		return result;
 	}

@@ -13,16 +13,30 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/User/git/skoleni/mongo-java-driver-2.13.0-rc0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/com/sun/jersey/jersey-core/1.8/jersey-core-1.8.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="com.sun.jersey"/>
-			<attribute name="maven.artifactId" value="jersey-core"/>
-			<attribute name="maven.version" value="1.8"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jackson-core-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jackson-jaxrs-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jackson-mapper-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jackson-xc-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/javax.servlet-api-3.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jersey-apache-client-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jersey-atom-abdera-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jersey-client-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jersey-core-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jersey-guice-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jersey-json-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jersey-multipart-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jersey-server-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jersey-servlet-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jersey-simple-server-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jersey-spring-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jettison-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/jstl-api-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/oauth-client-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/oauth-server-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/oauth-signature-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Documents/GitHub/skoleni/WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
