@@ -210,7 +210,7 @@ public class DBConnect implements DbUtil {
 	}
 
 	public GridFSDBFile getImage(String id) {
-		GridFS photos = new GridFS(getDB(), "videos");
+		GridFS photos = new GridFS(getDB(), "photo");
 		return photos.findOne(new BasicDBObject("filename", id));
 	}
 }

@@ -53,7 +53,9 @@ table {border-style: groove; border-collapse: separate;}
 				<div class="candidate" align=center>
 					ID divky:
 					<%=miss.getId()%><br> 
-					<c:url value="/candidate/getImage?"+<%=miss.getId() %> var="image"></c:url>
+					<c:url value="/candidate/getImage" var="image">
+						<c:param name="id" value="546da6861a2e5ca863bd72bf" />
+					</c:url>
 					<img id="img"
 						src='<c:out value="${image}"></c:out>'
 						width="262px" height="393)px"> <br>
