@@ -24,31 +24,6 @@ public class TestCreateCandidates {
 	
 
 
-	public static void main(String[] args){
-	    List<Candidate> cands;
-		//cands=(ArrayList<Candidate>)CandidateFactory.createList(str);
-		
-		DBHandler hand= DBHandler.getInstance();
-		
-		try {
-			cands=hand.getCandidates();
-			for (Candidate candidate : cands) {
-				System.out.println(candidate.getFirstName());
-				System.out.println(candidate.getId());
-				System.out.println(candidate.getChest());
-			}
-			
-		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//Candidate can= CandidateFactory.createCandidate(str1);
-		//System.out.println(can.getAge());
-		
-	
-
-	}
 	
 
 }

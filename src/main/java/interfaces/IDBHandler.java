@@ -11,5 +11,5 @@ public String getCandidate(String id) throws Exception;
 public List<Candidate> getCandidates(int count, int page) throws Exception;
 public String createCandidate(String body) throws Exception;
 public boolean removeCandidate(String id) throws Exception;
-public String updateCandidate(String id, String body) throws Exception;
+public String updateCandidate(String id, Candidate can) throws Exception;
 }

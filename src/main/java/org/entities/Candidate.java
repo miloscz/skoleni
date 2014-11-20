@@ -4,7 +4,7 @@ public class Candidate {
 	private String firstName, surname;
 	private int age, votes;
 	private int chest, waist, hips;
-	private int heigth, weight;
+	private int height, weight;
 	private String _id;
 	
 	
@@ -21,7 +21,7 @@ public class Candidate {
 		this.chest = chest;
 		this.waist = waist;
 		this.hips = hips;
-		this.heigth = height;
+		this.height = height;
 		this.weight = weight;
 		this.votes = votes;
 	}
@@ -118,15 +118,15 @@ public class Candidate {
 	/**
 	 * @return the heigth
 	 */
-	public synchronized double getHeigth() {
-		return heigth;
+	public synchronized double getHeight() {
+		return height;
 	}
 
 	/**
 	 * @param heigth the heigth to set
 	 */
-	public synchronized void setHeigth(int heigth) {
-		this.heigth = heigth;
+	public synchronized void setHeight(int heigth) {
+		this.height = heigth;
 	}
 
 	/**

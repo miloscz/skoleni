@@ -1,16 +1,14 @@
 package cz.unicorn.mongo.rest;
 
 
-import java.awt.PageAttributes.MediaType;
-
-import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
-import com.sun.jersey.core.header.MediaTypes;
+import org.entities.Candidate;
+import org.entities.CandidateFactory;
 
 import backend.DBHandler;
 @Path("/")
@@ -47,10 +45,10 @@ public class MongoRESTService {
 	@Path("/{candidateid}")
 	public Response updateCandidate(@PathParam("candidateid") String cid, String data) {
 		String id = null;
-		System.out.println(cid);
-		System.out.println(data);
+		Candidate can=CandidateFactory.createCandidate(data);
+		System.out.println(can);
 		try {
-			id = DBHandler.getInstance().updateCandidate(cid, data);
+			id = DBHandler.getInstance().updateCandidate(cid, can);
 		} catch (Exception ex) {
 			failServer(ex.toString());
 		}

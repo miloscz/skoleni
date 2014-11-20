@@ -8,28 +8,42 @@ import com.mongodb.DBObject;
 
 public class CandidateFactory {
 
+
+	private static Integer convert(Double doub){
+		return  doub.intValue();
+		
+	}
+	
+	private static int convert(Object o){
+		if (o instanceof Double){return convert((Double)o);}
+		return (Integer) o;
+	}
+	
+	
+	
 	public static Candidate createCandidate(DBObject item) throws RuntimeException {
 
 		Candidate c = new Candidate();
-		try {
-			c.setAge(((Double) item.get("age")).intValue());
+	//	try {
+			
+			c.setAge(convert((item.get("age"))));
 			c.setId(item.get("_id").toString());
 			c.setFirstName(item.get("firstName").toString());
 			c.setSurname(item.get("surname").toString());
-			c.setHeigth(((Double) item.get("height")).intValue());
-			c.setWeight(((Double) item.get("weight")).intValue());
-			c.setVotes(((Double) item.get("votes")).intValue());
-			c.setChest(((Double) item.get("chest")).intValue());
-			c.setWaist(((Double) item.get("waist")).intValue());
-			c.setHips(((Double) item.get("hips")).intValue());
+			c.setHeight(convert (  item.get("height"))  );
+			c.setWeight(convert( item.get("weight")));
+			c.setVotes(convert(item.get("votes")));
+			c.setChest(convert( item.get("chest")));
+			c.setWaist(convert( item.get("waist")));
+			c.setHips(convert( item.get("hips")));
 			return c;
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
+	//	} catch (Exception ex) {
+		//	ex.printStackTrace();
+		//}
 
-		// Candidate m =JSON.fromJson(candidate,Candidate.class);
+	//	 Candidate m =JSON.fromJson(candidate,Candidate.class);
 
-		return null;
+		//return null;
 	}
 
 	// NESTIHL JSEM ODZKOUSET, SPIS ALE NEFUNGUJE
@@ -58,6 +72,12 @@ public class CandidateFactory {
 		// }
 
 		return candidates;
+	}
+	
+	public static Candidate createCandidate(String json) {
+		
+
+		return JSON.fromJson(json,Candidate.class);
 	}
 
 }
