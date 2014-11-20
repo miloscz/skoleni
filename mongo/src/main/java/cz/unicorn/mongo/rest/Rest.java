@@ -24,8 +24,12 @@ public class Rest {
 		candidates = rest.getCandidates();
 			
 		}
-		catch(Exception e){
-			return Response.status(400).build();
+		catch(DBRequestException e){
+			return Response.status(400).entity(e.getMessage()).build();
+		}
+		catch(DBServerException e)
+		{
+			return Response.status(500).entity(e.getMessage()).build();
 		}
 		
 		return Response.status(200).entity(candidates).build();
@@ -40,8 +44,12 @@ public class Rest {
 		
 		 candidate = rest.getCandidate(id);
 		}
-		catch(Exception e){
-			return Response.status(400).build();
+		catch(DBRequestException e){
+			return Response.status(400).entity(e.getMessage()).build();
+		}
+		catch(DBServerException e)
+		{
+			return Response.status(500).entity(e.getMessage()).build();
 		}
 		return Response.status(200).entity(candidate).build();
 	}
@@ -53,8 +61,12 @@ public class Rest {
 		
 		try{
 			rest.addCandidate(data);
-		}catch(Exception e){
-			return Response.status(400).build();
+		}catch(DBRequestException e){
+			return Response.status(400).entity(e.getMessage()).build();
+		}
+		catch(DBServerException e)
+		{
+			return Response.status(500).entity(e.getMessage()).build();
 		}
 		
 		
@@ -69,8 +81,12 @@ public class Rest {
 		
 		try{
 			rest.editCandidate(idCandidate ,data);
-		}catch(Exception e){
-			return Response.status(400).build();
+		}catch(DBRequestException e){
+			return Response.status(400).entity(e.getMessage()).build();
+		}
+		catch(DBServerException e)
+		{
+			return Response.status(500).entity(e.getMessage()).build();
 		}
 		
 		
@@ -84,10 +100,13 @@ public class Rest {
 		
 		try{
 			rest.removeCandidate(idCandidate);
-		}catch(Exception e){
-			return Response.status(400).build();
+		}catch(DBRequestException e){
+			return Response.status(400).entity(e.getMessage()).build();
 		}
-		
+		catch(DBServerException e)
+		{
+			return Response.status(500).entity(e.getMessage()).build();
+		}
 		
 		return Response.status(200).build();
 	}
@@ -99,8 +118,12 @@ public class Rest {
 		
 		try{
 			rest.addEvaluation(idCandidate);
-		}catch(Exception e){
-			return Response.status(400).build();
+		}catch(DBRequestException e){
+			return Response.status(400).entity(e.getMessage()).build();
+		}
+		catch(DBServerException e)
+		{
+			return Response.status(500).entity(e.getMessage()).build();
 		}
 		
 		
