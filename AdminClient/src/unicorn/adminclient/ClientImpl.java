@@ -61,6 +61,7 @@ public class ClientImpl {
 					connection.setDoOutput(true);
 					connection.setRequestProperty("Content-Type",
 							"application/json");
+					connection.setRequestProperty("charset", "UTF-8");
 					byte[] encoded = Base64.encode(credentials);
 
 					String encodedString = new String(encoded);
@@ -69,7 +70,7 @@ public class ClientImpl {
 
 					connection.setConnectTimeout(5000);
 					connection.setReadTimeout(5000);
-
+					
 					outPutStreamWriter = new OutputStreamWriter(
 							connection.getOutputStream());
 					outPutStreamWriter.write(object.toString());
