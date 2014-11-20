@@ -1,9 +1,11 @@
+
 <%@page import="cz.unicorn.mongo.rest.DbUtil"%>
 <%@page import="java.util.List"%>
 <%@page import="cz.unicorn.mongo.rest.Candidate"%>
 <%@page import="cz.unicorn.mongo.rest.DBConnect"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -54,7 +56,7 @@ table {border-style: groove; border-collapse: separate;}
 					ID divky:
 					<%=miss.getId()%><br> 
 					<c:url value="/candidate/getImage" var="image">
-						<c:param name="id" value="546da6861a2e5ca863bd72bf" />
+						<c:param name="id" value="<%= miss.getId() %>" />
 					</c:url>
 					<img id="img"
 						src='<c:out value="${image}"></c:out>'
