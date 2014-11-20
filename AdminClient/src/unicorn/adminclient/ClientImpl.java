@@ -1,9 +1,11 @@
 package unicorn.adminclient;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.net.URL;
@@ -22,12 +24,19 @@ public class ClientImpl {
 
 	private static final String filePath = "import.json";
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) {	
 
 		Reader reader = null;
 		OutputStreamWriter outPutStreamWriter = null;
-		try {
+		
+		InputStreamReader streamReader=new InputStreamReader(System.in);
+		BufferedReader br = null;        
+		
+		try {	
+			System.out.print("Vlozte cestu k souboru.");
+					
+			br = new BufferedReader(streamReader);
+			String filepath = br.readLine();	
 			reader = new FileReader(filePath);
 
 			JSONParser jsonParser = new JSONParser();
@@ -39,9 +48,7 @@ public class ClientImpl {
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
-			}
-
-			
+			}			
 
 			String urlPath = "http://localhost:8080/mongo/api/candidate/create";
 			
@@ -97,6 +104,9 @@ public class ClientImpl {
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (IOException e){
+			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		finally{
 			
@@ -107,13 +117,14 @@ public class ClientImpl {
 				if(outPutStreamWriter!=null){
 					outPutStreamWriter.close();
 				}
+				if(br!=null){
+					br.close();
+				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-			
+				System.out.println(e.getMessage());
+			}			
 		}
-
 	}
-
 }
