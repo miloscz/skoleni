@@ -71,7 +71,7 @@ table {border-style: groove; border-collapse: separate;}
 					<%=miss.getWeight()%>
 					<br>Pocet hlasu:
 					<%=miss.getRating()%>
-					<form action="VoteAction.jsp" method="get">
+					<form action="VoteAction.jsp" method="post">
 						<input value="<%=miss.getId()%>" name="id" type="hidden">
 						<input value="Hlasuj" type="submit">
 					</form>

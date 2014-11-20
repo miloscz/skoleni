@@ -38,6 +38,7 @@ public class ImageServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		
 		GridFSDBFile image = util.getImage(id);
+		if (image != null) {
 		
 		InputStream input = image.getInputStream();
 		OutputStream output =  response.getOutputStream();
@@ -48,7 +49,7 @@ public class ImageServlet extends HttpServlet {
 	    {
 	        output.write(buffer, 0, bytesRead);
 	    }
-	    
+		}
 	    javax.servlet.RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
         rd.forward(request, response);
 	}
