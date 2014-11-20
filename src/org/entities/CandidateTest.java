@@ -82,12 +82,12 @@ public class CandidateTest {
 	}
 
 	@Test
-	public void testGetHeigth() {
+	public void testGetHeight() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testSetHeigth() {
+	public void testSetHeight() {
 		fail("Not yet implemented");
 	}
 
