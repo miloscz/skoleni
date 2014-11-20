@@ -183,8 +183,9 @@ public class DBConnect implements DbUtil {
 		return candidates;
 	}
 	
-	public long getCandidatesCount() {
-		return getCol().count();
+	public int getPagesCount() {
+		Double pages = Math.ceil((double)getCol().getCount()/PAGE_SIZE);
+		return pages.intValue();
 	}
 	
 }
