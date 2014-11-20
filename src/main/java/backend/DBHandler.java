@@ -3,7 +3,6 @@ package backend;
 import interfaces.IDBHandler;
 
 import java.net.UnknownHostException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -16,6 +15,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.WriteResult;
 import com.mongodb.util.JSON;
 
 public class DBHandler implements IDBHandler {
@@ -49,7 +49,11 @@ public class DBHandler implements IDBHandler {
 	public void vote(String id) throws Exception {
 		DBCollection candidateCol = getDatabase().getCollection("candidate");
 		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
-		candidateCol.update(obj,  new BasicDBObject("$inc", "1"));
+		System.out.println(obj.toString());
+		System.out.println(new BasicDBObject("$inc", new BasicDBObject("vote",1)).toString());
+		WriteResult wr=candidateCol.update(obj, new BasicDBObject("$inc", new BasicDBObject("votes",1)) );
+		System.out.println(wr);
+		System.out.println();
 	}
 
 	@Override
