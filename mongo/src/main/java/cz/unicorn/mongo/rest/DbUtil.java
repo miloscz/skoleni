@@ -6,8 +6,6 @@ import com.mongodb.gridfs.GridFSDBFile;
 
 public interface DbUtil {
 	
-
-	
 	public String getCandidates();
 	
 	public String getCandidate(String id);
