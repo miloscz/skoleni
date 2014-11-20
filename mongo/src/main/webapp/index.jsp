@@ -3,8 +3,8 @@
 <%@page import="java.util.List"%>
 <%@page import="cz.unicorn.mongo.rest.Candidate"%>
 <%@page import="cz.unicorn.mongo.rest.DBConnect"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -37,7 +37,7 @@ table {border-style: groove; border-collapse: separate;}
 	<table>
 		<tr>
 		<td class=strankovani>
-		Stranka:<%
+		Stránka:<%
 		for(int i=1;i<=missPages;i++){
 			%>
 		<a href="?page=<%=i %>"><%=i %> </a>
@@ -53,7 +53,7 @@ table {border-style: groove; border-collapse: separate;}
 			%>
 			<td>
 				<div class="candidate" align=center>
-					ID divky:
+					ID dívky:
 					<%=miss.getId()%><br> 
 					<c:url value="/candidate/getImage" var="image">
 						<c:param name="id" value="<%= miss.getId() %>" />
@@ -63,13 +63,13 @@ table {border-style: groove; border-collapse: separate;}
 						width="262px" height="393)px"> <br>
 						
 						
-						Jmeno:
+						Jméno:
 					<%=miss.getName()%>
-					<br>Vyska:
+					<br>Výska:
 					<%=miss.getHeight()%>
-					<br>Vaha:
+					<br>Váha:
 					<%=miss.getWeight()%>
-					<br>Pocet hlasu:
+					<br>Počet hlasů:
 					<%=miss.getRating()%>
 					<form action="VoteAction.jsp" method="post">
 						<input value="<%=miss.getId()%>" name="id" type="hidden">
