@@ -183,4 +183,8 @@ public class DBConnect implements DbUtil {
 		return candidates;
 	}
 	
+	public long getCandidatesCount() {
+		return getCol().count();
+	}
+	
 }
