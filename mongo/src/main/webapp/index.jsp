@@ -18,9 +18,21 @@ table {border-style: groove;}
 </head>
 <%
 	DbUtil db= DBConnect.getInstance();
-	List<Candidate> LC = db.getCandidatesList();
+	 db.getCandidatesList();
+	
+	String missPage = request.getParameter("page");
+	if(missPage==null){
+		missPage="1";
+	}
+	try{
+	List<Candidate> LC = db.getCandidatesPage(Integer.valueOf(missPage));
+	}
+	catch (Exception e){
+		List<Candidate> LC = db.getCandidatesPage(1);
+	}
 %>
 <body>
+<%=missPage %>
 	<table>
 		<tr>
 			<%
