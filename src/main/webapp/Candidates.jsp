@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%> <%@page import ="interfaces.IDBHandler" %>
-    <%@ page errorPage="ShowError.jsp" %>
+<%--     <%@ page errorPage="ShowError.jsp" %> --%>
     <%@page import ="backend.DBHandler" %>
     <%@page import = "org.entities.Candidate" %>
     <%@page import = "java.util.List" %>
@@ -31,7 +31,7 @@
       		<td>name: ${candidate.firstName} ${candidate.surname}</td>
       	</tr>
       	<tr>
-      		<td>age: ${candidate.age}, height: ${candidate.heigth}, weight: ${candidate.weight}</td>
+      		<td>age: ${candidate.age}, height: ${candidate.height}, weight: ${candidate.weight}</td>
       	</tr>
       	<tr>
       		<td>chest: ${candidate.chest}, waist: ${candidate.waist}, hips: ${candidate.hips}</td>
