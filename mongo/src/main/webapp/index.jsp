@@ -52,9 +52,14 @@ table {border-style: groove; border-collapse: separate;}
 			<td>
 				<div class="candidate" align=center>
 					ID divky:
-					<%=miss.getId()%><br> <img id="img"
-						src="http://www.eonline.com/eol_images/Entire_Site/201357/rs_634x1024-130607103334-634.MissCali.mh.060713.jpg"
-						width="262px" height="393)px"> <br>Jmeno:
+					<%=miss.getId()%><br> 
+					<c:url value="/candidate/getImage?"+<%=miss.getId() %> var="image"></c:url>
+					<img id="img"
+						src='<c:out value="${image}"></c:out>'
+						width="262px" height="393)px"> <br>
+						
+						
+						Jmeno:
 					<%=miss.getName()%>
 					<br>Vyska:
 					<%=miss.getHeight()%>
