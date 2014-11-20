@@ -2,28 +2,30 @@ package cz.unicorn.mongo.rest;
 
 import java.util.List;
 
+import com.mongodb.gridfs.GridFSDBFile;
+
 public interface DbUtil {
 	
-
+	public String getCandidates();
 	
-	public String getCandidates() throws Exception;
+	public String getCandidate(String id);
 	
-	public String getCandidate(String id) throws Exception;
+	public Candidate getCandidateObj(String id);
 	
-	public Candidate getCandidateObj(String id) throws Exception;
+	public List<Candidate> getCandidatesList();
 	
-	public List<Candidate> getCandidatesList() throws Exception;
+	public void addCandidate(String data);
 	
-	public void addCandidate(String data) throws Exception;
+	public void editCandidate(String id, String data);
 	
-	public void editCandidate(String id, String data) throws Exception;
+	public void removeCandidate(String id);	
 	
-	public void removeCandidate(String id) throws Exception;	
+	public void addEvaluation(String id);	
 	
-	public void addEvaluation(String id) throws Exception;	
-	
-	public List<Candidate> getCandidatesPage(int order) throws Exception;
+	public List<Candidate> getCandidatesPage(int order);
 	
 	public int getPagesCount();
+	
+	public GridFSDBFile getImage(String data);
 	
 }

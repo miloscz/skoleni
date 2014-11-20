@@ -19,7 +19,7 @@ public class Candidate {
 			String aAge,
 			String aHeight,
 			String aWeight,
-			String aRating) throws Exception {
+			String aRating){
 
 		super();
 		this.id = id;
@@ -35,7 +35,7 @@ public class Candidate {
 			
 
 		} catch (NumberFormatException e) {			
-			throw new Exception(e.getMessage());
+			throw new DBServerException(e.getMessage());
 		}
 
 	}
