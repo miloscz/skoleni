@@ -3,26 +3,33 @@ package org.entities;
 public class Candidate {
 	private String firstName, surname;
 	private int age, votes;
-	private double chest, waist, hips;
-	private double heigth, weight;
+	private int chest, waist, hips;
+	private int heigth, weight;
+	private String _id;
 	
 	
 
 	 
 
-	public Candidate(String firstName, String surname, int age, double chest,
-			double waist, double hips, double heigth, double weight,
+	public Candidate(String id, String firstName, String surname, int age, int chest,
+			int waist, int hips, int height, int weight,
 			int votes) {
+		this._id=id;
 		this.firstName = firstName;
 		this.surname = surname;
 		this.age = age;
 		this.chest = chest;
 		this.waist = waist;
 		this.hips = hips;
-		this.heigth = heigth;
+		this.heigth = height;
 		this.weight = weight;
 		this.votes = votes;
 	}
+
+	
+	public Candidate() {
+	}
+
 
 	/**
 	 * @return the age
@@ -48,7 +55,7 @@ public class Candidate {
 	/**
 	 * @param chest the chest to set
 	 */
-	public void setChest(double chest) {
+	public void setChest(int chest) {
 		this.chest = chest;
 	}
 
@@ -62,7 +69,7 @@ public class Candidate {
 	/**
 	 * @param waist the waist to set
 	 */
-	public void setWaist(double waist) {
+	public void setWaist(int waist) {
 		this.waist = waist;
 	}
 
@@ -76,7 +83,7 @@ public class Candidate {
 	/**
 	 * @param hips the hips to set
 	 */
-	public void setHips(double hips) {
+	public void setHips(int hips) {
 		this.hips = hips;
 	}
 
@@ -118,7 +125,7 @@ public class Candidate {
 	/**
 	 * @param heigth the heigth to set
 	 */
-	public synchronized void setHeigth(double heigth) {
+	public synchronized void setHeigth(int heigth) {
 		this.heigth = heigth;
 	}
 
@@ -132,7 +139,7 @@ public class Candidate {
 	/**
 	 * @param weight the weight to set
 	 */
-	public synchronized void setWeight(double weight) {
+	public synchronized void setWeight(int weight) {
 		this.weight = weight;
 	}
 
@@ -148,6 +155,22 @@ public class Candidate {
 	 */
 	public synchronized void setVotes(int votes) {
 		this.votes = votes;
+	}
+
+
+	/**
+	 * @return the id
+	 */
+	public synchronized String getId() {
+		return _id;
+	}
+
+
+	/**
+	 * @param id the id to set
+	 */
+	public synchronized void setId(String id) {
+		this._id = id;
 	}
 	
 	
