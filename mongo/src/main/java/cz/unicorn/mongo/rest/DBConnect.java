@@ -13,6 +13,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.WriteResult;
+import com.mongodb.gridfs.GridFS;
 import com.mongodb.gridfs.GridFSDBFile;
 import com.mongodb.util.JSON;
 
@@ -208,8 +209,8 @@ public class DBConnect implements DbUtil {
 		return pages.intValue();
 	}
 
-	public GridFSDBFile getImage(String data) {
-		// TODO Auto-generated method stub
-		return null;
+	public GridFSDBFile getImage(String id) {
+		GridFS photos = new GridFS(getDB(), "videos");
+		return photos.findOne(new BasicDBObject("filename", id));
 	}
 }
