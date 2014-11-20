@@ -11,7 +11,7 @@ public class Candidate {
 	 
 
 	public Candidate(String firstName, String surname, int age, double chest,
-			double waist, double hips, double heigth, double weight,
+			double waist, double hips, double height, double weight,
 			int votes) {
 		this.firstName = firstName;
 		this.surname = surname;
@@ -19,10 +19,15 @@ public class Candidate {
 		this.chest = chest;
 		this.waist = waist;
 		this.hips = hips;
-		this.heigth = heigth;
+		this.heigth = height;
 		this.weight = weight;
 		this.votes = votes;
 	}
+
+	
+	public Candidate() {
+	}
+
 
 	/**
 	 * @return the age
