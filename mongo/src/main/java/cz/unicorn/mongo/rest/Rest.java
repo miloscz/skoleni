@@ -32,11 +32,11 @@ public class Rest {
 			return Response.status(500).entity(e.getMessage()).build();
 		}
 		
-		return Response.status(200).entity(candidates).build();
+		return Response.status(200).header("charset", "UTF-8").entity(candidates).build();
 	}
 	
 	@GET
-	@Path("/candidate/{CANTIDATE_ID}")
+	@Path("/candidate/{CANDIDATE_ID}")
 	@Produces("application/json")
 	public Response getCandidate(@PathParam("CANDIDATE_ID") String id)
 	{String candidate;

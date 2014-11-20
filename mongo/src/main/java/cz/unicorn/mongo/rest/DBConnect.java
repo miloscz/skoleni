@@ -131,8 +131,7 @@ public class DBConnect implements DbUtil {
 	}
 
 	private DBObject getDBOID(String id) {
-		DBObject db = getCol().findOne(
-				new BasicDBObject("_id", new ObjectId(id)));
+		DBObject db = getCol().findOne(new BasicDBObject("_id", new ObjectId(id)));
 		if(db==null) {
 			throw new DBRequestException("DBObject with this id doesn't exist.");
 		}
