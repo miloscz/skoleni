@@ -24,16 +24,27 @@ table {border-style: groove;}
 	if(missPage==null){
 		missPage="1";
 	}
-	try{
+	
 	List<Candidate> LC = db.getCandidatesPage(Integer.valueOf(missPage));
-	}
-	catch (Exception e){
-		List<Candidate> LC = db.getCandidatesPage(1);
-	}
+	int missPages=db.getPagesCount();
 %>
 <body>
-<%=missPage %>
+
 	<table>
+		<tr>
+		<td>
+		<%=missPage %><%
+		for(int i=1;i<=missPages;i++){
+			%>
+		<a href="?page=<%=i %>"><%=i %></a>
+		<% 
+		}
+		
+		
+		%>
+		
+		</td>
+		</tr>
 		<tr>
 			<%
 				for (Candidate miss : LC) {
