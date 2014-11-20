@@ -18,6 +18,8 @@ import com.mongodb.util.JSON;
 public class DBConnect implements DbUtil {
 	
 	private static DBConnect instance;
+	
+	private final int PAGE_SIZE = 10;
 
 	public String getCandidates() throws Exception {
 		List<DBObject> candidates = new ArrayList<DBObject>();
@@ -154,6 +156,24 @@ public class DBConnect implements DbUtil {
 		try {
 			while (cursor.hasNext()) {
 				DBObject cur = cursor.next();
+				candidates.add(getCanFromDBO(cur));
+			}
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			cursor.close();
+		}
+		return candidates;
+	}
+	
+	public List<Candidate> getCandidatesPage(int order) throws Exception {
+		List<Candidate> candidates = new ArrayList<Candidate>();
+		DBCursor cursor = getCol().find().skip((order-1)*PAGE_SIZE).limit(PAGE_SIZE);		
+		
+		try {
+			while (cursor.hasNext()) {
+				DBObject cur = cursor.next();
+				System.out.println(cur);
 				candidates.add(getCanFromDBO(cur));
 			}
 		} catch (Exception e) {
