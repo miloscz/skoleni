@@ -1,0 +1,84 @@
+{
+    "candidates": [
+        {
+            "name": "Karel",
+            "surname": "Horáková",
+            "age": "22",
+            "height": "160",
+            "weight": "55",
+            "rating": 0
+        },
+        {
+            "name": "Ana",
+            "surname": "Adamová",
+            "age": "21",
+            "height": "140",
+            "weight": "51",
+            "rating": 0
+        },
+        {
+            "name": "Petra",
+            "surname": "Nová",
+            "age": "20",
+            "height": "150",
+            "weight": "52",
+            "rating": 0
+        },
+        {
+            "name": "Michala",
+            "surname": "Nováková",
+            "age": "19",
+            "height": "130",
+            "weight": "54",
+            "rating": 0
+        },
+        {
+            "name": "Adama",
+            "surname": "Neznalá",
+            "age": "17",
+            "height": "180",
+            "weight": "55",
+            "rating": 0
+        },
+        {
+            "name": "Jitka",
+            "surname": "Odeslaná",
+            "age": "25",
+            "height": "198",
+            "weight": "56",
+            "rating": 0
+        },
+        {
+            "name": "Monika",
+            "surname": "Vypadlá",
+            "age": "30",
+            "height": "165",
+            "weight": "57",
+            "rating": 0
+        },
+        {
+            "name": "Veronika",
+            "surname": "Mladá",
+            "age": "25",
+            "height": "145",
+            "weight": "53",
+            "rating": 0
+        },
+        {
+            "name": "Zita",
+            "surname": "Stará",
+            "age": "24",
+            "height": "130",
+            "weight": "54",
+            "rating": 0
+        },
+        {
+            "name": "Petra",
+            "surname": "Vypadlá",
+            "age": "22",
+            "height": "145",
+            "weight": "50",
+            "rating": 0
+        }
+    ]
+}
