@@ -10,6 +10,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -57,8 +58,11 @@ public class ClientImpl {
             	
              
             	for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+            		
             		System.out.println("Key : " + entry.getKey() 
                                        + " ,Value : " + entry.getValue());
+            		Object obj = entry.getValue();
+            		//if(.equals("[HTTP/1.1 200 OK]"));
             	}
              
             	System.out.println("\nGet Response Header By Key ...\n");
