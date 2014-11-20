@@ -40,8 +40,7 @@ public class Rest {
 	@Produces("application/json")
 	public Response getCandidate(@PathParam("CANDIDATE_ID") String id)
 	{String candidate;
-		try{
-		
+		try{		
 		 candidate = rest.getCandidate(id);
 		}
 		catch(DBRequestException e){
