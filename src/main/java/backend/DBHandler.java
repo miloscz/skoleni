@@ -1,0 +1,99 @@
+package backend;
+
+import interfaces.IDBHandler;
+
+import java.net.UnknownHostException;
+import java.util.List;
+
+import org.bson.types.ObjectId;
+import org.entities.Candidate;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
+import com.mongodb.util.JSON;
+
+public class DBHandler implements IDBHandler {
+	private static DBHandler instance;
+	private DB db;
+	private DBHandler(){}
+	public List<Candidate> getCandidates() throws Exception {
+		DBCollection candidateCol;
+		DBCursor obj = null;
+		candidateCol = getDatabase().getCollection("candidate");
+		obj = candidateCol.find();
+		String result = obj.toString();
+		obj.close();
+		return null; //TODO CandidateFactory.parse(result);
+	}
+	public void vote(String id) throws Exception {
+		DBCollection candidateCol;
+		DBCursor obj = null;
+		candidateCol = getDatabase().getCollection("candidate");
+		obj = candidateCol.find();
+		String result = obj.toString();
+		obj.close();
+		return ; //TODO CandidateFactory.parse(result);
+		
+	}
+	public String getCandidate(String id) throws Exception {
+		DBCollection candidateCol;
+		candidateCol = getDatabase().getCollection("candidate");
+		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
+		String result = obj.toString();
+		return result;
+	}
+	public List<Candidate> getCandidates(int count, int page) throws Exception {
+		DBCollection candidateCol;
+		DBCursor obj = null;
+		candidateCol = getDatabase().getCollection("candidate");
+		obj = candidateCol.find().skip(page).limit(count);
+		String result = obj.toString();
+		obj.close();
+		return null;//TODO CandidateFactory.parse(result);
+	}
+	public String createCandidate(String body) throws Exception {
+		DBCollection candidateCol = getDatabase().getCollection("candidate");
+		BasicDBObject obj = (BasicDBObject)JSON.parse(body);
+		candidateCol.insert(obj);
+		candidateCol.ensureIndex(new BasicDBObject("name",false));
+		String result = obj.get("_id").toString();
+		return result;
+	}
+	public boolean removeCandidate(String id) throws Exception {
+		DBCollection candidateCol = getDatabase().getCollection("candidate");
+		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
+		candidateCol.remove(obj);
+		return true;
+	}
+	public String updateCandidate(String id, String body) throws Exception {
+		DBCollection candidateCol = getDatabase().getCollection("candidate");
+		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
+		candidateCol.update(obj,  new BasicDBObject("$set", body));
+		obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
+		return obj.toString();
+	};
+	
+	private DB getDatabase() throws UnknownHostException {
+		if (db == null) {
+			MongoClient client;
+			client = new MongoClient();
+			db = client.getDB("candidates");
+		}
+		return db;
+	}
+	
+	public static DBHandler getInstance() {
+	if (instance == null) {
+		instance = new DBHandler();
+		return instance;
+	} else {
+		return instance;
+	}
+}
+
+
+}

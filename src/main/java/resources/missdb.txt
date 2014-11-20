@@ -1,0 +1,281 @@
+[
+{
+    "firstName": "Andrea",
+    "surname": "Novotna",
+    "age": "19",
+    "height": "150",
+    "weight": "50",
+    "votes": "0",
+    "parameters":{
+        "chest": "200",
+        "waist": "20",
+        "hips": "100"
+        }
+}
+,
+{
+    "firstName": "Barbora",
+    "surname": "Rybárová",
+    "age": "20",
+    "height": "160",
+    "weight": "60",
+    "votes": "1",
+    "parameters":{
+        "chest": "180",
+        "waist": "30",
+        "hips": "98"
+        }
+}
+,
+{
+    "firstName": "Cecilie",
+    "surname": "Morgensternová",
+    "age": "21",
+    "height": "165",
+    "weight": "63",
+    "votes": "1",
+    "parameters":{
+        "chest": "160",
+        "waist": "40",
+        "hips": "96"
+        }
+}
+,
+{
+    "firstName": "Dorota",
+    "surname": "Máchalová",
+    "age": "22",
+    "height": "170",
+    "weight": "64",
+    "votes": "10",
+    "parameters":{
+        "chest": "140",
+        "waist": "42",
+        "hips": "94"
+        }
+}
+,
+{
+    "firstName": "Emílie",
+    "surname": "Vašáryová",
+    "age": "24",
+    "height": "168",
+    "weight": "66",
+    "votes": "9",
+    "parameters":{
+        "chest": "120",
+        "waist": "44",
+        "hips": "92"
+        }
+}
+,
+{
+    "firstName": "Frëderyka",
+    "surname": "Förschtäinová",
+    "age": "25",
+    "height": "166",
+    "weight": "64",
+    "votes": "8",
+    "parameters":{
+        "chest": "110",
+        "waist": "46",
+        "hips": "90"
+        }
+}
+,
+{
+    "firstName": "Gudrun",
+    "surname": "Brangwenová",
+    "age": "26",
+    "height": "164",
+    "weight": "61",
+    "votes": "18",
+    "parameters":{
+        "chest": "110",
+        "waist": "46",
+        "hips": "89"
+        }
+}
+,
+{
+    "firstName": "Hedvika",
+    "surname": "Zdráhalová",
+    "age": "16",
+    "height": "163",
+    "weight": "59",
+    "votes": "17",
+    "parameters":{
+        "chest": "90",
+        "waist": "59",
+        "hips": "90"
+        }
+}
+,
+{
+    "firstName": "Iveta",
+    "surname": "Zemánková",
+    "age": "17",
+    "height": "161",
+    "weight": "57",
+    "votes": "17",
+    "parameters":{
+        "chest": "91",
+        "waist": "60",
+        "hips": "90"
+        }
+}
+,
+{
+    "firstName": "Jarmila",
+    "surname": "Šindlerová Barboøíková",
+    "age": "18",
+    "height": "159",
+    "weight": "56",
+    "votes": "66",
+    "parameters":{
+        "chest": "90",
+        "waist": "60",
+        "hips": "90"
+        }
+}
+,
+{
+    "firstName": "Klotylda",
+    "surname": "Saturninová",
+    "age": "19",
+    "height": "156",
+    "weight": "51",
+    "votes": "56",
+    "parameters":{
+        "chest": "90",
+        "waist": "60",
+        "hips": "90"
+        }
+}
+,
+{
+    "firstName": "Ludmila",
+    "surname": "Dvoøáková",
+    "age": "21",
+    "height": "29",
+    "weight": "58",
+    "votes": "158",
+    "parameters":{
+        "chest": "90",
+        "waist": "60",
+        "hips": "90"
+        }
+}
+,
+{
+    "firstName": "Margaret",
+    "surname": "Thatcherová",
+    "age": "99",
+    "height": "199",
+    "weight": "69",
+    "votes": "9",
+    "parameters":{
+        "chest": "99",
+        "waist": "69",
+        "hips": "99"
+        }
+}
+,
+{
+    "firstName": "Nikita",
+    "surname": "Chrušèovová",
+    "age": "35",
+    "height": "135",
+    "weight": "35",
+    "votes": "5",
+    "parameters":{
+        "chest": "95",
+        "waist": "55",
+        "hips": "90"
+        }
+}
+,
+{
+    "firstName": "Olga",
+    "surname": "Jevtušèenková",
+    "age": "32",
+    "height": "132",
+    "weight": "42",
+    "votes": "13",
+    "parameters":{
+        "chest": "95",
+        "waist": "45",
+        "hips": "95"
+        }
+}
+,
+{
+    "firstName": "Petrunie",
+    "surname": "Jekatìrinková",
+    "age": "26",
+    "height": "146",
+    "weight": "46",
+    "votes": "6",
+    "parameters":{
+        "chest": "96",
+        "waist": "46",
+        "hips": "96"
+        }
+}
+,
+{
+    "firstName": "Quintinie",
+    "surname": "Tichonovová",
+    "age": "28",
+    "height": "148",
+    "weight": "48",
+    "votes": "8",
+    "parameters":{
+        "chest": "98",
+        "waist": "48",
+        "hips": "98"
+        }
+}
+,
+{
+    "firstName": "Rubinie",
+    "surname": "Jevtušèenková",
+    "age": "27",
+    "height": "147",
+    "weight": "47",
+    "votes": "7",
+    "parameters":{
+        "chest": "97",
+        "waist": "47",
+        "hips": "97"
+        }
+}
+,
+{
+    "firstName": "Solimanie",
+    "surname": "Larionovová",
+    "age": "29",
+    "height": "149",
+    "weight": "49",
+    "votes": "9",
+    "parameters":{
+        "chest": "99",
+        "waist": "49",
+        "hips": "99"
+        }
+}
+,
+{
+    "firstName": "Trondheimie",
+    "surname": "Gagarinová",
+    "age": "30",
+    "height": "155",
+    "weight": "51",
+    "votes": "2100",
+    "parameters":{
+        "chest": "91",
+        "waist": "61",
+        "hips": "90"
+        }
+}
+]

@@ -18,7 +18,6 @@
 <title>Miss Candidates</title>
 </head>
 <body>
-		<c:forEach items="${list}" var="candidate" >
       <table style="background-color: olive; font-family: Georgia; padding: 3px, 3px">
       	<tr>
       		<td>Name: ${candidate.firstName} ${candidate.surname}</td>
@@ -33,7 +32,5 @@
       		<td>Votes: <h2>${candidate.votes}</h2></td>
       	</tr>
       </table>  
-
-	</c:forEach>
 </body>
 </html>
