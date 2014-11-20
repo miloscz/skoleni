@@ -44,11 +44,6 @@ public class DBConnect implements DbUtil {
 
 		WriteResult wr = getCol().insert(can);
 
-		if (wr.getN() != 1) {
-			throw new DBRequestException(
-					"Candidate couldn't be added : wrong format of data.");
-		}
-
 	}
 
 	public void editCandidate(String id, String data) {

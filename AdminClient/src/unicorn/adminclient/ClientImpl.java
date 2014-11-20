@@ -87,8 +87,8 @@ public class ClientImpl {
 					}
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
-					//e.printStackTrace();
-					System.out.println("Spatny format JSON");
+					e.printStackTrace();
+					//System.out.println("Spatny format JSON");
 				}
 			}
 
