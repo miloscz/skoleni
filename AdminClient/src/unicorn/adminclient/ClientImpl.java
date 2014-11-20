@@ -16,71 +16,103 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import com.sun.jersey.core.util.Base64;
+
 public class ClientImpl {
 
-	
 	private static final String filePath = "import.json";
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		Reader reader = null;
 		OutputStreamWriter outPutStreamWriter = null;
 		try {
 			reader = new FileReader(filePath);
-			
-			
+
 			JSONParser jsonParser = new JSONParser();
-			JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
-			
-			JSONArray candidates = (JSONArray) jsonObject.get("candidates");
-			
-			String urlPath = "http://localhost:8080/mongo/api/candidate/create";
-			URL url = new URL(urlPath);
-			for (Object object : candidates) {
-				
-			
-				URLConnection connection = url.openConnection();
-				connection.setDoOutput(true);
-				connection.setRequestProperty("Content-Type", "application/json");
-				
-                connection.setConnectTimeout(5000);
-                connection.setReadTimeout(5000);
-                outPutStreamWriter = new OutputStreamWriter(connection.getOutputStream());
-                outPutStreamWriter.write(object.toString());
-                outPutStreamWriter.close();					
-                
-                InputStream response = connection.getInputStream();
-                // String body = IOUtils.toString(response);
-                Map<String, List<String>> map = connection.getHeaderFields();
-                
-            	
-             
-            	for (Map.Entry<String, List<String>> entry : map.entrySet()) {
-            		System.out.println("Key : " + entry.getKey() 
-                                       + " ,Value : " + entry.getValue());
-            	}
-             
-            	System.out.println("\nGet Response Header By Key ...\n");
-            	String server = connection.getHeaderField("Server");
-              
-                
-                
-                
-              
+			JSONObject jsonObject;
+			JSONArray candidates = null;
+			try {
+				jsonObject = (JSONObject) jsonParser.parse(reader);
+				candidates = (JSONArray) jsonObject.get("candidates");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
 
 			
-		} catch(FileNotFoundException e){
+
+			String urlPath = "http://localhost:8080/mongo/api/candidate/create";
+			
+			for (Object object : candidates) {
+
+				try {
+					URL url = new URL(urlPath);
+					String credentials = "user:pass";
+					URLConnection connection = url.openConnection();
+					connection.setDoOutput(true);
+					connection.setRequestProperty("Content-Type",
+							"application/json");
+					byte[] encoded = Base64.encode(credentials);
+
+					String encodedString = new String(encoded);
+					connection.setRequestProperty("Authorization", "Basic "
+							+ encodedString);
+
+					connection.setConnectTimeout(5000);
+					connection.setReadTimeout(5000);
+
+					outPutStreamWriter = new OutputStreamWriter(
+							connection.getOutputStream());
+					outPutStreamWriter.write(object.toString());
+					outPutStreamWriter.close();
+
+					InputStream response = connection.getInputStream();
+					Map<String, List<String>> map = connection.getHeaderFields();
+
+					for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+
+						if (entry.getKey() == null) {
+							String status = entry.getValue().toString();
+							String statusOk = "[HTTP/1.1 200 OK]";
+
+							if (statusOk.equalsIgnoreCase(status)) {
+								System.out.println("Uspesne zapsano do databáze.");
+							} else {
+								System.out.println("Chyba pri ukladani pres REST.");
+							}
+						}
+
+					}
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					//System.out.println("Spatny format JSON");
+				}
+			}
+
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		}		
-		catch (IOException | ParseException e) {
+		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
+		finally{
+			
+			try {
+				if(reader!=null){
+					reader.close();
+				}
+				if(outPutStreamWriter!=null){
+					outPutStreamWriter.close();
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 
 	}
 

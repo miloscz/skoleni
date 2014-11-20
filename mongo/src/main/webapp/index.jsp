@@ -12,8 +12,10 @@
 <style>
 p {color:blue}
 body {background-color: #c9c9c9;}
-table {border-style: groove;}
-.candidate div {width: 300px;}
+table {border-style: groove; border-collapse: separate;}
+.candidate {width: 300px; background-color: white;}
+.candidate img {border-style:ridge; border-width:3px ;border-color: #000000;}
+.strankovani {width:300px;text-align: right; background-color: white}
 </style>
 </head>
 <%
@@ -24,26 +26,35 @@ table {border-style: groove;}
 	if(missPage==null){
 		missPage="1";
 	}
-	try{
+	
 	List<Candidate> LC = db.getCandidatesPage(Integer.valueOf(missPage));
-	}
-	catch (Exception e){
-		List<Candidate> LC = db.getCandidatesPage(1);
-	}
+	int missPages=db.getPagesCount();
 %>
 <body>
-<%=missPage %>
+<div class="stranka" align=center>
 	<table>
+		<tr>
+		<td class=strankovani>
+		Stranka:<%
+		for(int i=1;i<=missPages;i++){
+			%>
+		<a href="?page=<%=i %>"><%=i %> </a>
+		<% 
+		}
+		%>/<%=missPage %>
+		
+		</td>
+		</tr>
 		<tr>
 			<%
 				for (Candidate miss : LC) {
 			%>
 			<td>
-				<div id="candidate" align=center>
-					Divka cislo:
+				<div class="candidate" align=center>
+					ID divky:
 					<%=miss.getId()%><br> <img id="img"
-						src="http://www.oceanbluemagazine.com/wpimages/wpfa7e4e56_06.png"
-						width="100px" height="200px"> <br>Jmeno:
+						src="http://www.eonline.com/eol_images/Entire_Site/201357/rs_634x1024-130607103334-634.MissCali.mh.060713.jpg"
+						width="262px" height="393)px"> <br>Jmeno:
 					<%=miss.getName()%>
 					<br>Vyska:
 					<%=miss.getHeight()%>
@@ -64,5 +75,6 @@ table {border-style: groove;}
 		%>
 
 	</table>
+	</div>
 </body>
 </html>
