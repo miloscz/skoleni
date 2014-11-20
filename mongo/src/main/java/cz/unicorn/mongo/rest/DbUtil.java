@@ -21,5 +21,6 @@ public interface DbUtil {
 	public void removeCandidate(String id) throws Exception;	
 	
 	public void addEvaluation(String id) throws Exception;	
+	public List<Candidate> getCandidatesPage(int order) throws Exception;
 	
 }

@@ -65,7 +65,7 @@ public class DBConnect implements DbUtil {
 
 	public void addEvaluation(String id) throws Exception {
 		DBObject db = getDBOID(id);
-		Integer r = Integer.parseInt((String) db.get("rating"));
+		Integer r = (Integer) db.get("rating");
 		r++;
 		getCol().update(new BasicDBObject("_id", new ObjectId(id)), new BasicDBObject("$set", new BasicDBObject("rating", r)));
 		
@@ -173,7 +173,6 @@ public class DBConnect implements DbUtil {
 		try {
 			while (cursor.hasNext()) {
 				DBObject cur = cursor.next();
-				System.out.println(cur);
 				candidates.add(getCanFromDBO(cur));
 			}
 		} catch (Exception e) {
