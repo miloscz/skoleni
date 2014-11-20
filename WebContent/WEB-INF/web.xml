@@ -14,14 +14,18 @@
 		<welcome-file>Candidates.jsp</welcome-file>
 	</welcome-file-list>
 	
-	<servlet>
-		<servlet-name>RESTClient</servlet-name>
-		<servlet-class>rest.RESTClient</servlet-class>
+<servlet>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>rest</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 
-
 	<servlet-mapping>
-		<servlet-name>RESTClient</servlet-name>
-		<url-pattern>/services/*")</url-pattern>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
 </web-app>

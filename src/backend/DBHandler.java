@@ -1,23 +1,20 @@
 package backend;
 
+import interfaces.IDBHandler;
+
 import java.net.UnknownHostException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.entities.Candidate;
-import org.entities.CandidateFactory;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 import com.mongodb.util.JSON;
-
-import interfaces.IDBHandler;
 
 public class DBHandler implements IDBHandler {
 	private static DBHandler instance;
