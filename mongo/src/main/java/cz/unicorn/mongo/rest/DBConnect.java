@@ -155,6 +155,9 @@ public class DBConnect implements DbUtil {
 		if (db.get("weight") == null) {
 			return false;
 		}
+		if (db.get("rating") == null) {
+			return false;
+		}
 
 		return true;
 	}
