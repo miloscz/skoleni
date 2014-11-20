@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%> <%@page import ="interfaces.IDBHandler" %>
+    <%@ page errorPage="ShowError.jsp" %>
     <%@page import ="backend.DBHandler" %>
     <%@page import = "org.entities.Candidate" %>
     <%@page import = "java.util.List" %>
@@ -10,7 +11,8 @@
     
     <% request.setAttribute("listCandid", listCandidates);%>
      <% if(request.getParameter("submit")!=null){
-    	handler.vote(request.getParameter("id"));	 
+    	handler.vote(request.getParameter("id"));
+    	response.sendRedirect("Candidates.jsp");
      }
 
 %>

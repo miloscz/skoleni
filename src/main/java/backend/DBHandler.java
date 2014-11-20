@@ -85,10 +85,14 @@ public class DBHandler implements IDBHandler {
 
 	@Override
 	public String updateCandidate(String id, String body) throws Exception {
-		//TODO:
+		System.out.println("HALOOO");
 		DBCollection candidateCol = getDatabase().getCollection("candidate");
+		System.out.println("HALOOO");
 		DBObject obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
+		System.out.println("HALOOO");
 		candidateCol.update(obj,  new BasicDBObject("$set", body));
+		System.out.println("holaaa");
+		System.out.println("HOLAAAAA"+obj.toString());
 		obj = candidateCol.findOne(new BasicDBObject("_id", new ObjectId(id)));
 		return obj.toString();
 	}

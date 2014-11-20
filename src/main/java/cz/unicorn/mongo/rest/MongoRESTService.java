@@ -47,6 +47,8 @@ public class MongoRESTService {
 	@Path("/{candidateid}")
 	public Response updateCandidate(@PathParam("candidateid") String cid, String data) {
 		String id = null;
+		System.out.println(cid);
+		System.out.println(data);
 		try {
 			id = DBHandler.getInstance().updateCandidate(cid, data);
 		} catch (Exception ex) {
