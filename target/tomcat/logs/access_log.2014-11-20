@@ -1,0 +1,13 @@
+127.0.0.1 - - [20/Nov/2014:12:38:43 +0100] "GET /mongo/api/v1/ HTTP/1.1" 405 1013 http-bio-8080-exec-1 62
+127.0.0.1 - - [20/Nov/2014:12:38:44 +0100] "GET /mongo/api/v1/ HTTP/1.1" 405 1013 http-bio-8080-exec-3 0
+127.0.0.1 - - [20/Nov/2014:12:38:48 +0100] "POST /mongo/api/v1/ HTTP/1.1" 200 35 http-bio-8080-exec-5 593
+0:0:0:0:0:0:0:1 - - [20/Nov/2014:13:02:51 +0100] "GET /miss/Candidates.jsp HTTP/1.1" 404 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [20/Nov/2014:13:02:53 +0100] "GET /miss/Candidates.jsp HTTP/1.1" 404 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [20/Nov/2014:13:03:00 +0100] "GET /mongo/Candidates.jsp HTTP/1.1" 500 2692 http-bio-8080-exec-4 645
+127.0.0.1 - - [20/Nov/2014:13:03:19 +0100] "GET /mongo/api/v1/ HTTP/1.1" 405 1013 http-bio-8080-exec-5 31
+127.0.0.1 - - [20/Nov/2014:13:03:23 +0100] "POST /mongo/api/v1/ HTTP/1.1" 200 35 http-bio-8080-exec-7 376
+127.0.0.1 - - [20/Nov/2014:13:15:04 +0100] "POST /mongo/api/v1/ HTTP/1.1" 200 35 http-bio-8080-exec-1 360
+127.0.0.1 - - [20/Nov/2014:13:47:56 +0100] "POST /mongo/api/v1/ HTTP/1.1" 200 35 http-bio-8080-exec-1 1093
+127.0.0.1 - - [20/Nov/2014:13:49:51 +0100] "POST /mongo/api/v1/ HTTP/1.1" 200 35 http-bio-8080-exec-1 391
+127.0.0.1 - - [20/Nov/2014:13:52:30 +0100] "POST /mongo/api/v1/ HTTP/1.1" 200 35 http-bio-8080-exec-1 437
+0:0:0:0:0:0:0:1 - - [20/Nov/2014:13:52:36 +0100] "GET /mongo/Candidates.jsp HTTP/1.1" 200 677 http-bio-8080-exec-3 1872
