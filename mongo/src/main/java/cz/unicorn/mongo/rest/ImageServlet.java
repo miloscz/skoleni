@@ -50,8 +50,13 @@ public class ImageServlet extends HttpServlet {
 	        output.write(buffer, 0, bytesRead);
 	    }
 		}
+		try {
 	    javax.servlet.RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
         rd.forward(request, response);
+		}
+		catch (Exception e) {
+			
+		}
 	}
 
 	/**
